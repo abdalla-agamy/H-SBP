@@ -1,0 +1,34 @@
+2025-04-25 18:14:59 - [ch-2] Starting Cluster Head Node: ch-2
+2025-04-25 18:14:59 - [ch-2] Loading config file: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-04-25 18:14:59 - [ch-2] Loading secrets file: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-04-25 18:14:59 - [ch-2] Loaded DH params. g=2, p=89623836882807575898..., sk_i=84367308198844714177..., T_i=82246560189885737889...
+2025-04-25 18:14:59 - [ch-2] Loading SL public key: None
+2025-04-25 18:14:59 - [ch-2] Loading own private key: /mnt/workarea/H-SBP/keys/ch2_private.pem
+2025-04-25 18:14:59 - [ch-2] Starting node ch-2 as CH for Cluster 2
+2025-04-25 18:14:59 - [ch-2] SL Target: ('172.16.0.2', 5000). Inter-CH UDP Listen: ('172.16.0.255', 6000)
+2025-04-25 18:14:59 - [ch-2] Member TCP Listen: ('0.0.0.0', 5002). Cluster UDP Broadcast: ('172.16.0.255', 6002)
+2025-04-25 18:14:59 - [ch-2] Managing Members: ['m-201', 'm-202', 'm-203', 'm-204']
+2025-04-25 18:14:59 - [ch-2] Initializing Cluster Head...
+2025-04-25 18:14:59 - [ch-2] Successfully bound Inter-CH UDP listener to ('172.16.0.255', 6000)
+2025-04-25 18:14:59 - [ch-2] Attempt 1: Connecting to SL at ('172.16.0.2', 5000)...
+2025-04-25 18:14:59 - [ch-2] Connected to SL via TCP.
+2025-04-25 18:14:59 - [ch-2] Sent ID and T_ch to SL.
+2025-04-25 18:14:59 - [ch-2]2025-04-25 18:14:59 - [ch-2]  TCP Server listening on ('0.0.0.0', 5002) for MembersStarting Inter-CH UDP listener on ('172.16.0.255', 6000)
+2025-04-25 18:14:59 - [ch-2] CH Initialization complete. Running...
+
+2025-04-25 18:14:59 - [ch-2] Processing KEY_UPDATE from SL...
+2025-04-25 18:14:59 - [ch-2] Received Inter-CH State: Seq=['sl-0', 'ch-2']
+2025-04-25 18:14:59 - [ch-2] Attempting to compute K_main...
+2025-04-25 18:14:59 - [ch-2] Computed new main key K_main: 464877291091479446419051742471... (took 0.351 ms)
+2025-04-25 18:15:00 - [ch-2] Accepted potential Member connection from ('172.16.0.5', 49350)
+2025-04-25 18:15:00 - [ch-2] Member m-201 connected from ('172.16.0.5', 49350) with T_i: 30690548914718671226690326329218997604806367954801660551202911973643797939771
+2025-04-25 18:15:00 - [ch-2] Error handling Member m-201: 'ch-2'
+Traceback (most recent call last):
+  File "/mnt/workarea/H-SBP/cluster_head.py", line 447, in handle_member_connection
+    compute_cluster_broadcast_key(member_id) # Compute new K_cluster
+  File "/mnt/workarea/H-SBP/cluster_head.py", line 325, in compute_cluster_broadcast_key
+    if len(cluster_swarm_sequence) == 1: I_prev = cluster_intermediate_keys[MY_ID] # CH's sk_i
+KeyError: 'ch-2'
+2025-04-25 18:15:00 - [ch-2] Handling departure for Member m-201
+2025-04-25 18:15:00 - [ch-2] Cluster Sequence after removing m-201 and subsequent: []
+2025-04-25 18:15:00 - [ch-2] Error: CH departure cannot be handled here.

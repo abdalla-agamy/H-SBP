@@ -1,0 +1,120 @@
+Okay, let's break down the implementation into manageable steps, starting with a simple 2-cluster setup (SL, 2x CH, 8x Members total). We'll focus on the core hierarchy and basic SBP operations first.
+
+**Goal:** Implement a basic Hierarchical SBP (H-SBP) demonstrating intra-cluster key management and global broadcast relay, deferring dynamic cluster changes, handoffs, and failure handling.
+
+**Assumptions for Initial Implementation:**
+
+*   **Static Roles:** Drones have pre-assigned roles (SL, CH1, CH2, Member of Cluster 1, Member of Cluster 2).
+*   **Static Membership:** Cluster membership is fixed initially.
+*   **Pre-shared Secret Keys:** All drones (`SL`, `CHs`, `Members`) have pre-generated, unique secret keys (`sk_i`).
+*   **Shared Parameters:** All drones know `g` and `p`.
+*   **Network:** All drones can potentially communicate (we'll use different ports/logic to simulate clustering). For simulation (like CORE), you might assign different subnets or just use logic/ports.
+*   **Configuration:** We'll need a way to tell each script its role, its cluster (if any), its members/CHs, and necessary initial keys/IDs.
+
+**Core Components to Implement:**
+
+1.  **SwarmLeader (SL) Node:** Manages the top-level SBP chain with Cluster Heads. Initiates global broadcasts.
+2.  **ClusterHead (CH) Node:** Manages an SBP chain for its local cluster members. Relays global broadcasts from SL to its members. Acts as a "follower" in the SL's chain and a "leader" in its own cluster's chain.
+3.  **Member Node:** Participates in its cluster's SBP chain. Receives relayed broadcasts.
+
+---
+
+**Implementation Steps:**
+
+**Step 0: Setup and Configuration**
+
+1.  **Assign IDs:** Give unique IDs to all 11 drones (e.g., `sl-0`, `ch-1`, `ch-2`, `m-101`, `m-102`, ..., `m-204`).
+2.  **Generate Keys:** Create a central key store (e.g., a JSON file) mapping drone IDs to their unique `sk_i` values.
+3.  **Define Cluster Structure:** Create a configuration (e.g., another JSON file or hardcoded in scripts) defining:
+    *   `sl_id`: "sl-0"
+    *   `cluster_defs`:
+        *   `cluster-1`: { `ch_id`: "ch-1", `members`: ["m-101", "m-102", "m-103", "m-104"] }
+        *   `cluster-2`: { `ch_id`: "ch-2", `members`: ["m-201", "m-202", "m-203", "m-204"] }
+4.  **Networking Plan:** Decide on ports.
+    *   SL listens for CH connections/updates (e.g., TCP 5000).
+    *   SL broadcasts inter-CH updates (e.g., UDP 6000).
+    *   CHs listen for Member connections/updates (e.g., TCP 5001 for CH1, TCP 5002 for CH2).
+    *   CHs broadcast intra-cluster updates (e.g., UDP 6001 for CH1, UDP 6002 for CH2).
+    *   CHs connect to SL (TCP 5000).
+    *   Members connect to their CH (TCP 5001 or 5002).
+    *   Members listen for intra-cluster broadcasts (UDP 6001 or 6002).
+
+**Step 1: Adapt Codebase - Create Role-Specific Scripts**
+
+1.  **Copy Files:** Create three base scripts by copying your working (fragmentation-aware) `leader_1000.py` and `follower_1000.py`:
+    *   `swarm_leader.py` (based on `leader_1000.py`)
+    *   `cluster_head.py` (based on both - needs leader *and* follower logic)
+    *   `member.py` (based on `follower_1000.py`)
+2.  **Add Role Loading:** Modify each script to load its role, ID, keys, and cluster configuration at startup (e.g., using command-line arguments or reading the config files).
+3.  **Initial Cleanup (Member):** In `member.py`, remove leader-specific logic (e.g., handling connections *from* followers, calculating `g^I` values for others, signing messages). It only needs to connect to its CH, send its `T_i`, receive/process intra-cluster updates, and compute its cluster key (`K_cluster`).
+4.  **Initial Cleanup (SL):** In `swarm_leader.py`, adapt it to manage CHs instead of regular followers. Its `connected_followers` will become `connected_chs`. It computes `K_main`. It doesn't manage regular members directly.
+
+**Step 2: Implement Intra-Cluster SBP (CH as Leader, Member as Follower)**
+
+1.  **Focus:** CH1 and its 4 members (M101-M104).
+2.  **`cluster_head.py` (Leader Role):**
+    *   Implement the "leader" part: Listen for member connections, receive their `T_i`s.
+    *   Maintain `cluster_members`, `cluster_swarm_sequence`, `cluster_blind_keys`, `cluster_intermediate_keys`, `cluster_g_I_prev_values`.
+    *   Compute `K_cluster1` using the intra-cluster DH chain.
+    *   Implement `broadcast_cluster_update()`: Sends `KEY_UPDATE` (potentially fragmented) with cluster-specific info (sequence, `T_i`s, `g^I`s) to its members on its cluster broadcast address (UDP 6001). Use its own signing key (`sk_ch1`, requires loading a private key).
+    *   Implement basic intra-cluster message broadcast (encrypting with `K_cluster1`).
+3.  **`member.py`:**
+    *   Connect to its configured CH (CH1 on TCP 5001). Send its `T_i`.
+    *   Listen on its cluster broadcast address (UDP 6001) for `KEY_UPDATE` from the CH.
+    *   Implement `handle_cluster_message()`: Parse updates, verify CH signature (needs CH's public key), compute `K_cluster1` based on its position in the cluster sequence and the received `g^I` values.
+    *   Handle reassembly if fragmentation is used by the CH.
+4.  **Test:** Start CH1 and its 4 members. Verify members connect, CH computes `K_cluster1`, members receive the update and compute the *same* `K_cluster1`. Test a simple broadcast from CH1 to its members.
+
+**Step 3: Implement Inter-Cluster SBP (SL as Leader, CH as Follower)**
+
+1.  **Focus:** SL, CH1, CH2.
+2.  **`swarm_leader.py`:**
+    *   Implement the leader part for CHs: Listen for CH connections (TCP 5000), receive their `T_ch` values.
+    *   Maintain `connected_chs`, `inter_ch_swarm_sequence` (e.g., `[sl-0, ch-1, ch-2]`), `inter_ch_blind_keys`, `inter_intermediate_keys`, `inter_g_I_prev_values`.
+    *   Compute the main broadcast key `K_main`.
+    *   Implement `broadcast_inter_ch_update()`: Sends `KEY_UPDATE` (potentially fragmented) with inter-CH sequence, `T_ch`s, and `g^I_inter` values to *all* CHs (UDP 6000). Use SL's signing key.
+3.  **`cluster_head.py` (Follower Role):**
+    *   Implement the "follower" part: Connect to the SL (TCP 5000), send its `T_ch`.
+    *   Listen on the main broadcast address (UDP 6000) for `KEY_UPDATE` from the SL.
+    *   Add `handle_inter_ch_message()`: Parse updates, verify SL signature (needs SL's public key), compute `K_main` based on its position in the inter-CH sequence and received `g^I_inter` values. Handle fragmentation.
+4.  **Test:** Start SL, CH1, CH2. Verify CHs connect, SL computes `K_main`, CHs receive the update and compute the *same* `K_main`.
+
+**Step 4: Combine & Implement Global Broadcast Relay**
+
+1.  **Integrate:** Ensure CH nodes perform both their leader (intra-cluster) and follower (inter-cluster) roles correctly. They need both `K_cluster` and `K_main`.
+2.  **`swarm_leader.py`:** Add a function `send_global_broadcast(message_content)`:
+    *   Encrypt `message_content` using `K_main`.
+    *   Create a message like `GLOBAL_MSG|<encrypted_content>`.
+    *   Broadcast this on the inter-CH channel (UDP 6000).
+3.  **`cluster_head.py`:** Modify the UDP listener logic:
+    *   If a message starts with `GLOBAL_MSG`:
+        *   Extract and decrypt the content using `K_main`.
+        *   Re-encrypt the *original* content using its *own* `K_cluster`.
+        *   Create a message like `RELAYED_MSG|<re-encrypted_content>`.
+        *   Broadcast this on its *intra-cluster* channel (UDP 6001 or 6002).
+    *   Else (if it's `KEY_UPDATE` from SL): Process as in Step 3.
+    *   Else (if it's `KEY_UPDATE` from member - not applicable yet): Handle intra-cluster updates.
+4.  **`member.py`:** Modify the UDP listener logic:
+    *   If a message starts with `RELAYED_MSG`:
+        *   Extract and decrypt the content using its `K_cluster`.
+        *   Process/display the relayed message content.
+    *   Else (if it's `KEY_UPDATE` from CH): Process as in Step 2.
+5.  **Test:** Start all 11 nodes. Verify initialization of both `K_cluster` and `K_main`. Initiate a global broadcast from the SL and verify it's received and decrypted correctly by all 8 members in both clusters.
+
+**Step 5: Implement Intra-Cluster Join/Leave**
+
+1.  **Join:**
+    *   Modify `cluster_head.py` to handle new member connections *after* initial setup.
+    *   Implement the O(1) join logic: Calculate the new `K_cluster` and the required `g^(I_last_cluster)`.
+    *   Update `broadcast_cluster_update` to send the *minimal* join update (new member's ID, `T_i`, `g^I`) as described in the original SBP paper.
+    *   Modify `member.py` to handle these minimal join updates.
+2.  **Leave:**
+    *   Modify `cluster_head.py` to handle member departures (e.g., via a simulated command or connection loss).
+    *   Implement the leave logic: Recompute the intra-cluster DH chain from the point of departure. Calculate the new `K_cluster`.
+    *   Update `broadcast_cluster_update` to send the *full* state update (remaining sequence, `T_i`s, `g^I`s) *for that cluster* (potentially fragmented).
+    *   Modify `member.py` to handle these full leave updates.
+3.  **Test:** Start a cluster (e.g., CH1 + 4 members). Simulate a new member joining; verify keys update correctly within the cluster and the update message is small. Simulate a member leaving; verify keys update correctly within the cluster and the update message contains the remaining state (and check fragmentation if needed). Crucially, verify that these events *do not* trigger any updates on the inter-CH channel or affect `K_main` or the *other* cluster.
+
+---
+
+This step-by-step process builds the hierarchical structure incrementally, allowing testing at each stage. Remember to handle necessary cryptographic key loading (private keys for signing, public keys for verification) for SL and CHs. This lays the foundation before tackling more complex dynamic scenarios.

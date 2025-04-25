@@ -1,0 +1,48 @@
+{
+  "general": {
+    "g": 2,
+    "p": 89623836882807575898953596264244543572330229444342513348507616139417708009079
+  },
+  "network": {
+    "sl_tcp_address": "0.0.0.0",
+    "sl_tcp_port": 5000,
+    "inter_ch_bcast_addr": "172.16.0.255",
+    "inter_ch_bcast_port": 6000,
+    "ch_tcp_base_port": 5001,
+    "cluster_bcast_base_port": 6001,
+    "cluster_bcast_subnet": "172.16.0." 
+  },
+  "paths": {
+    "secret_keys_file": "config/hsbp_secrets.json",
+    "sl_priv_key": "keys/sl_private.pem",
+    "sl_pub_key": "keys/sl_public.pem",
+    "ch_priv_key_template": "keys/ch{}_private.pem", 
+    "ch_pub_key_template": "keys/ch{}_public.pem"
+  },
+  "structure": {
+    "sl_id": "sl-0",
+    "clusters": {
+      "1": {
+        "ch_id": "ch-1",
+        "members": ["m-101", "m-102", "m-103", "m-104"]
+      },
+      "2": {
+        "ch_id": "ch-2",
+        "members": ["m-201", "m-202", "m-203", "m-204"]
+      }
+    },
+    "node_definitions": {
+       "sl-0": {"role": "SL"},
+       "ch-1": {"role": "CH", "cluster_id": "1"},
+       "ch-2": {"role": "CH", "cluster_id": "2"},
+       "m-101": {"role": "MEMBER", "cluster_id": "1"},
+       "m-102": {"role": "MEMBER", "cluster_id": "1"},
+       "m-103": {"role": "MEMBER", "cluster_id": "1"},
+       "m-104": {"role": "MEMBER", "cluster_id": "1"},
+       "m-201": {"role": "MEMBER", "cluster_id": "2"},
+       "m-202": {"role": "MEMBER", "cluster_id": "2"},
+       "m-203": {"role": "MEMBER", "cluster_id": "2"},
+       "m-204": {"role": "MEMBER", "cluster_id": "2"}
+    }
+  }
+}
