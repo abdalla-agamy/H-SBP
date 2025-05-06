@@ -24,14 +24,18 @@
     "clusters": {
       "1": {
         "ch_id": "ch-1",
-        "members": ["m-101", "m-102", "m-103", "m-104"]
+        "initial_members": ["m-101", "m-102", "m-103"], 
+        "joining_member": "m-104",                   
+        "all_members_for_config": ["m-101", "m-102", "m-103", "m-104"] 
       },
       "2": {
         "ch_id": "ch-2",
-        "members": ["m-201", "m-202", "m-203", "m-204"]
+        "initial_members": ["m-201", "m-202", "m-203"], 
+        "joining_member": "m-204",
+        "all_members_for_config": ["m-201", "m-202", "m-203", "m-204"]
       }
     },
-    "node_definitions": {
+    "node_definitions": { 
        "sl-0": {"role": "SL"},
        "ch-1": {"role": "CH", "cluster_id": "1"},
        "ch-2": {"role": "CH", "cluster_id": "2"},
@@ -42,7 +46,7 @@
        "m-201": {"role": "MEMBER", "cluster_id": "2"},
        "m-202": {"role": "MEMBER", "cluster_id": "2"},
        "m-203": {"role": "MEMBER", "cluster_id": "2"},
-       "m-204": {"role": "MEMBER", "cluster_id": "2"}
+       "m-204": {"role": "MEMBER", "cluster_id": "2"} 
     }
   }
 }
