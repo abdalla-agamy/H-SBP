@@ -1,20 +1,20 @@
-2025-05-06 11:36:27 - [m-204] Starting Member Node: m-204
-2025-05-06 11:36:27 - [m-204] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
-2025-05-06 11:36:27 - [m-204] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
-2025-05-06 11:36:27 - [m-204] Loaded DH params...
-2025-05-06 11:36:27 - [m-204] Loading CH public key: /mnt/workarea/H-SBP/keys/ch2_public.pem
-2025-05-06 11:36:27 - [m-204] Starting node m-204 as MEMBER in Cluster 2
-2025-05-06 11:36:27 - [m-204] My CH is ch-2. Target CH Address: ('172.16.0.3', 5002)
-2025-05-06 11:36:27 - [m-204] Listening for cluster broadcasts on UDP ('172.16.0.255', 6002)
-2025-05-06 11:36:27 - [m-204] Successfully bound UDP listener to ('172.16.0.255', 6002)
-2025-05-06 11:36:27 - [m-204] Attempt 1: Connecting to CH ch-2 at ('172.16.0.3', 5002)
-2025-05-06 11:36:27 - [m-204] Connected to CH via TCP.
-2025-05-06 11:36:27 - [m-204] Sending ID: ID:m-204
-2025-05-06 11:36:27 - [m-204] Sending T_i: T_I:70094231033403432710394920715064285710090561406362291742706494944609150514196
-2025-05-06 11:36:27 - [m-204] ID and T_i sent.
-2025-05-06 11:36:27 - [m-204] Listening on UDP ('172.16.0.255', 6002) for cluster messages...
-2025-05-06 11:36:27 - [m-204] Processing KEY_UPDATE from CH...
-2025-05-06 11:36:27 - [m-204] Detected minimal join update format.
-2025-05-06 11:36:27 - [m-204] Computing cluster key as the JOINING member...
-2025-05-06 11:36:27 - [m-204] Computed initial K_cluster as JOINER: 791983043953299883837640826890... (took 0.444 ms)
-2025-05-06 11:36:27 - [m-204] [MEMBER] Execution time for joining key computation: 0.444 ms
+2025-05-09 15:57:52 - [m-204] Starting Member Node: m-204
+2025-05-09 15:57:52 - [m-204] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-09 15:57:52 - [m-204] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-09 15:57:52 - [m-204] Loaded DH params...
+2025-05-09 15:57:52 - [m-204] Loading CH public key: /mnt/workarea/H-SBP/keys/ch2_public.pem
+2025-05-09 15:57:52 - [m-204] Starting node m-204 as MEMBER in Cluster 2
+2025-05-09 15:57:52 - [m-204] My CH is ch-2. Target CH Address: ('172.16.0.3', 5002)
+2025-05-09 15:57:52 - [m-204] Listening for cluster broadcasts on UDP ('172.16.0.255', 6002)
+2025-05-09 15:57:52 - [m-204] Successfully bound UDP listener to ('172.16.0.255', 6002)
+2025-05-09 15:57:52 - [m-204] Attempt 1: Connecting to CH ch-2 at ('172.16.0.3', 5002)
+2025-05-09 15:57:52 - [m-204] Connected to CH via TCP.
+2025-05-09 15:57:52 - [m-204] Sending ID: ID:m-204
+2025-05-09 15:57:52 - [m-204] Sending T_i: T_I:70094231033403432710394920715064285710090561406362291742706494944609150514196
+2025-05-09 15:57:52 - [m-204] ID and T_i sent.
+2025-05-09 15:57:52 - [m-204] Listening on UDP ('172.16.0.255', 6002) for cluster messages...
+2025-05-09 15:57:52 - [m-204] Processing KEY_UPDATE from CH...
+2025-05-09 15:57:52 - [m-204] Detected minimal join update format.
+2025-05-09 15:57:52 - [m-204] Computing cluster key as the JOINING member...
+2025-05-09 15:57:52 - [m-204] Computed initial K_cluster as JOINER: 791983043953299883837640826890... (took 0.213 ms)
+2025-05-09 15:57:52 - [m-204] [MEMBER] Execution time for joining key computation: 0.213 ms

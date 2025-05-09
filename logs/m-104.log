@@ -1,20 +1,26 @@
-2025-05-06 11:36:26 - [m-104] Starting Member Node: m-104
-2025-05-06 11:36:26 - [m-104] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
-2025-05-06 11:36:26 - [m-104] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
-2025-05-06 11:36:26 - [m-104] Loaded DH params...
-2025-05-06 11:36:26 - [m-104] Loading CH public key: /mnt/workarea/H-SBP/keys/ch1_public.pem
-2025-05-06 11:36:26 - [m-104] Starting node m-104 as MEMBER in Cluster 1
-2025-05-06 11:36:26 - [m-104] My CH is ch-1. Target CH Address: ('172.16.0.2', 5001)
-2025-05-06 11:36:26 - [m-104] Listening for cluster broadcasts on UDP ('172.16.0.255', 6001)
-2025-05-06 11:36:26 - [m-104] Successfully bound UDP listener to ('172.16.0.255', 6001)
-2025-05-06 11:36:26 - [m-104] Attempt 1: Connecting to CH ch-1 at ('172.16.0.2', 5001)
-2025-05-06 11:36:26 - [m-104] Connected to CH via TCP.
-2025-05-06 11:36:26 - [m-104] Sending ID: ID:m-104
-2025-05-06 11:36:26 - [m-104] Sending T_i: T_I:50714385044190386105346990656035363105687827300301739544898438571162470302566
-2025-05-06 11:36:26 - [m-104] ID and T_i sent.
-2025-05-06 11:36:26 - [m-104] Listening on UDP ('172.16.0.255', 6001) for cluster messages...
-2025-05-06 11:36:26 - [m-104] Processing KEY_UPDATE from CH...
-2025-05-06 11:36:26 - [m-104] Detected minimal join update format.
-2025-05-06 11:36:26 - [m-104] Computing cluster key as the JOINING member...
-2025-05-06 11:36:26 - [m-104] Computed initial K_cluster as JOINER: 845207749034322932194338654153... (took 0.316 ms)
-2025-05-06 11:36:26 - [m-104] [MEMBER] Execution time for joining key computation: 0.316 ms
+2025-05-09 15:57:51 - [m-104] Starting Member Node: m-104
+2025-05-09 15:57:51 - [m-104] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-09 15:57:51 - [m-104] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-09 15:57:51 - [m-104] Loaded DH params...
+2025-05-09 15:57:51 - [m-104] Loading CH public key: /mnt/workarea/H-SBP/keys/ch1_public.pem
+2025-05-09 15:57:51 - [m-104] Starting node m-104 as MEMBER in Cluster 1
+2025-05-09 15:57:51 - [m-104] My CH is ch-1. Target CH Address: ('172.16.0.2', 5001)
+2025-05-09 15:57:51 - [m-104] Listening for cluster broadcasts on UDP ('172.16.0.255', 6001)
+2025-05-09 15:57:51 - [m-104] Successfully bound UDP listener to ('172.16.0.255', 6001)
+2025-05-09 15:57:51 - [m-104] Attempt 1: Connecting to CH ch-1 at ('172.16.0.2', 5001)
+2025-05-09 15:57:51 - [m-104] Connected to CH via TCP.
+2025-05-09 15:57:51 - [m-104] Sending ID: ID:m-104
+2025-05-09 15:57:51 - [m-104] Sending T_i: T_I:50714385044190386105346990656035363105687827300301739544898438571162470302566
+2025-05-09 15:57:51 - [m-104] ID and T_i sent.
+2025-05-09 15:57:51 - [m-104] Listening on UDP ('172.16.0.255', 6001) for cluster messages...
+2025-05-09 15:57:51 - [m-104] Processing KEY_UPDATE from CH...
+2025-05-09 15:57:51 - [m-104] Detected minimal join update format.
+2025-05-09 15:57:51 - [m-104] Computing cluster key as the JOINING member...
+2025-05-09 15:57:51 - [m-104] Computed initial K_cluster as JOINER: 845207749034322932194338654153... (took 0.267 ms)
+2025-05-09 15:57:51 - [m-104] [MEMBER] Execution time for joining key computation: 0.267 ms
+2025-05-09 15:57:53 - [m-104] Processing KEY_UPDATE from CH...
+2025-05-09 15:57:53 - [m-104] Processing full state update format.
+2025-05-09 15:57:53 - [m-104] Received Cluster State: Seq=['ch-1', 'm-101', 'm-104']
+2025-05-09 15:57:53 - [m-104] Attempting to compute cluster key from full state...
+2025-05-09 15:57:53 - [m-104] Computed new cluster key K_cluster (from full state): 582122601273836366880131423339... (took 0.497 ms)
+2025-05-09 15:57:53 - [m-104] [MEMBER] Execution time for key computation (full state): 0.497 ms

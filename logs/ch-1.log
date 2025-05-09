@@ -1,47 +1,62 @@
-2025-05-06 11:36:20 - [ch-1] Starting Cluster Head Node: ch-1
-2025-05-06 11:36:20 - [ch-1] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
-2025-05-06 11:36:20 - [ch-1] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
-2025-05-06 11:36:20 - [ch-1] Loaded DH params...
-2025-05-06 11:36:20 - [ch-1] Loading SL public key: /mnt/workarea/H-SBP/keys/sl_public.pem
-2025-05-06 11:36:20 - [ch-1] Loading own private key: /mnt/workarea/H-SBP/keys/ch1_private.pem
-2025-05-06 11:36:20 - [ch-1] Starting node ch-1 as CH for Cluster 1
-2025-05-06 11:36:20 - [ch-1] Initial Members (M0): ['m-101', 'm-102', 'm-103']. Joining Member: m-104
-2025-05-06 11:36:20 - [ch-1] SL Target: ('172.16.0.1', 5000). Inter-CH UDP Listen: ('172.16.0.255', 6000)
-2025-05-06 11:36:20 - [ch-1] Member TCP Listen: ('0.0.0.0', 5001). Cluster UDP Broadcast: ('172.16.0.255', 6001)
-2025-05-06 11:36:20 - [ch-1] Managing Members (Full List): ['m-101', 'm-102', 'm-103', 'm-104']
-2025-05-06 11:36:20 - [ch-1] Initializing Cluster Head...
-2025-05-06 11:36:20 - [ch-1] Successfully bound Inter-CH UDP listener to ('172.16.0.255', 6000)
-2025-05-06 11:36:20 - [ch-1] Initializing SBP for Cluster 1 with initial members: ['m-101', 'm-102', 'm-103']
-2025-05-06 11:36:20 - [ch-1] Initial Cluster Sequence: ['ch-1', 'm-101', 'm-102', 'm-103']
-2025-05-06 11:36:20 - [ch-1] Initial K_cluster computed (M0 members): 520468326894969069789088435170... (took 1.314 ms)
-2025-05-06 11:36:20 - [ch-1] Initial g^I_prev values: { m-101: 266842410700180..., m-102: 328927686083040..., m-103: 665637153928671... }
-2025-05-06 11:36:20 - [ch-1] Constructing full state message body for event: initial_setup
-2025-05-06 11:36:20 - [ch-1] Cluster update message calculation time: 0.848 ms
-2025-05-06 11:36:20 - [ch-1] [CH] Key update message length for initial_setup: 710 bytes
-2025-05-06 11:36:20 - [ch-1] Broadcasting non-fragmented Cluster update (initial_setup). Size: 710. Send duration: 0.068 ms
-2025-05-06 11:36:20 - [ch-1] Attempt 1: Connecting to SL at ('172.16.0.1', 5000)...
-2025-05-06 11:36:20 - [ch-1] Connected to SL via TCP from ('172.16.0.2', 41227)
-2025-05-06 11:36:20 - [ch-1] Sent ID and T_ch to SL.
-2025-05-06 11:36:20 - [ch-1]2025-05-06 11:36:20 - [ch-1] Starting Inter-CH UDP listener on ('172.16.0.255', 6000)
- TCP Server listening on ('0.0.0.0', 5001) for Members
-2025-05-06 11:36:20 - [ch-1] CH Initialization complete. Waiting for designated joining member...
-2025-05-06 11:36:20 - [ch-1] Processing KEY_UPDATE from SL...
-2025-05-06 11:36:20 - [ch-1] Received Inter-CH State: Seq=['sl-0', 'ch-1']
-2025-05-06 11:36:20 - [ch-1] Attempting to compute K_main...
-2025-05-06 11:36:20 - [ch-1] Computed new main key K_main: 260603062592535112756424024466... (took 0.395 ms)
-2025-05-06 11:36:20 - [ch-1] [CH] Execution time for key update join event with SL : 0.395 ms
-2025-05-06 11:36:21 - [ch-1] Processing KEY_UPDATE from SL...
-2025-05-06 11:36:21 - [ch-1] Received Inter-CH State: Seq=['sl-0', 'ch-1', 'ch-2']
-2025-05-06 11:36:21 - [ch-1] Attempting to compute K_main...
-2025-05-06 11:36:21 - [ch-1] Computed new main key K_main: 873749429296764871131474053083... (took 0.947 ms)
-2025-05-06 11:36:21 - [ch-1] [CH] Execution time for key update join event with SL : 0.947 ms
-2025-05-06 11:36:26 - [ch-1] Accepted potential Member connection from ('172.16.0.4', 50026)
-2025-05-06 11:36:26 - [ch-1] Designated joining member m-104 connected from ('172.16.0.4', 50026) with T_i: 50714385044190386105346990656035363105687827300301739544898438571162470302566
-2025-05-06 11:36:26 - [ch-1] Computing single join update for m-104
-2025-05-06 11:36:26 - [ch-1] Updated K_cluster after join: 845207749034322932194338654153... (took 0.642 ms)
-2025-05-06 11:36:26 - [ch-1] Calculated g^I_prev for joiner m-104: 204648934009700766087141131913...
-2025-05-06 11:36:26 - [ch-1] [CH] Execution time for single join event (m-104): 0.642 ms
-2025-05-06 11:36:26 - [ch-1] Constructing minimal join message body: ID=m-104, T=507143850441903..., gI=204648934009700...
-2025-05-06 11:36:26 - [ch-1] Cluster update message calculation time: 1.015 ms
-2025-05-06 11:36:26 - [ch-1] [CH] Key update message length for single_join(m-104): 346 bytes
-2025-05-06 11:36:26 - [ch-1] Broadcasting non-fragmented Cluster update (single_join). Size: 346. Send duration: 0.087 ms
+2025-05-09 15:57:45 - [ch-1] Starting Cluster Head Node: ch-1
+2025-05-09 15:57:45 - [ch-1] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-09 15:57:45 - [ch-1] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-09 15:57:45 - [ch-1] Loaded DH params...
+2025-05-09 15:57:45 - [ch-1] Loading SL public key: /mnt/workarea/H-SBP/keys/sl_public.pem
+2025-05-09 15:57:45 - [ch-1] Loading own private key: /mnt/workarea/H-SBP/keys/ch1_private.pem
+2025-05-09 15:57:45 - [ch-1] Starting node ch-1 as CH for Cluster 1
+2025-05-09 15:57:45 - [ch-1] Initial Members (M0): ['m-101', 'm-102', 'm-103']. Joining Member: m-104
+2025-05-09 15:57:45 - [ch-1] SL Target: ('172.16.0.1', 5000). Inter-CH UDP Listen: ('172.16.0.255', 6000)
+2025-05-09 15:57:45 - [ch-1] Member TCP Listen: ('0.0.0.0', 5001). Cluster UDP Broadcast: ('172.16.0.255', 6001)
+2025-05-09 15:57:45 - [ch-1] CH Control Port will be: ('0.0.0.0', 5100)
+2025-05-09 15:57:45 - [ch-1] Managing Members (Full List): ['m-101', 'm-102', 'm-103', 'm-104']
+2025-05-09 15:57:45 - [ch-1] Initializing Cluster Head...
+2025-05-09 15:57:45 - [ch-1] Successfully bound Inter-CH UDP listener to ('172.16.0.255', 6000)
+2025-05-09 15:57:45 - [ch-1] Initializing SBP for Cluster 1 with initial members: ['m-101', 'm-102', 'm-103']
+2025-05-09 15:57:45 - [ch-1] Initial Cluster Sequence: ['ch-1', 'm-101', 'm-102', 'm-103']
+2025-05-09 15:57:45 - [ch-1] Initial K_cluster computed (M0 members): 520468326894969069789088435170... (took 1.502 ms)
+2025-05-09 15:57:45 - [ch-1] Initial g^I_prev values: { m-101: 266842410700180..., m-102: 328927686083040..., m-103: 665637153928671... }
+2025-05-09 15:57:45 - [ch-1] Constructing full state message body for event: initial_setup
+2025-05-09 15:57:46 - [ch-1]2025-05-09 15:57:46 - [ch-1]  Cluster update message calculation time: 10.078 msControl command listener started on ('0.0.0.0', 5100)
+
+2025-05-09 15:57:46 - [ch-1] [CH] Key update message length for initial_setup: 710 bytes
+2025-05-09 15:57:46 - [ch-1] Broadcasting non-fragmented Cluster update (initial_setup). Size: 710. Send duration: 0.065 ms
+2025-05-09 15:57:46 - [ch-1] Attempt 1: Connecting to SL at ('172.16.0.1', 5000)...
+2025-05-09 15:57:46 - [ch-1] Connected to SL via TCP from ('172.16.0.2', 46021)
+2025-05-09 15:57:46 - [ch-1] Sent ID and T_ch to SL.
+2025-05-09 15:57:46 - [ch-1] TCP Server listening on ('0.0.0.0', 5001) for Members
+2025-05-09 15:57:46 - [ch-1]2025-05-09 15:57:46 - [ch-1] CH Initialization complete. Waiting for designated joining member... Starting Inter-CH UDP listener on ('172.16.0.255', 6000)
+
+2025-05-09 15:57:46 - [ch-1] Processing KEY_UPDATE from SL...
+2025-05-09 15:57:46 - [ch-1] Received Inter-CH State: Seq=['sl-0', 'ch-1']
+2025-05-09 15:57:46 - [ch-1] Attempting to compute K_main...
+2025-05-09 15:57:46 - [ch-1] Computed new main key K_main: 260603062592535112756424024466... (took 0.218 ms)
+2025-05-09 15:57:46 - [ch-1] [CH] As-follower, Execution time for joining SL key computation : 0.218 ms
+2025-05-09 15:57:46 - [ch-1] Processing KEY_UPDATE from SL...
+2025-05-09 15:57:46 - [ch-1] Received Inter-CH State: Seq=['sl-0', 'ch-1', 'ch-2']
+2025-05-09 15:57:46 - [ch-1] Attempting to compute K_main...
+2025-05-09 15:57:46 - [ch-1] Computed new main key K_main: 873749429296764871131474053083... (took 0.613 ms)
+2025-05-09 15:57:46 - [ch-1] [CH] As-follower, Execution time for joining SL key computation : 0.613 ms
+2025-05-09 15:57:51 - [ch-1] Accepted potential Member connection from ('172.16.0.4', 47358)
+2025-05-09 15:57:51 - [ch-1] Designated joining member m-104 connected from ('172.16.0.4', 47358) with T_i: 50714385044190386105346990656035363105687827300301739544898438571162470302566
+2025-05-09 15:57:51 - [ch-1] Computing single join update for m-104
+2025-05-09 15:57:51 - [ch-1] Updated K_cluster after join: 845207749034322932194338654153... (took 0.865 ms)
+2025-05-09 15:57:51 - [ch-1] Calculated g^I_prev for joiner m-104: 204648934009700766087141131913...
+2025-05-09 15:57:51 - [ch-1] [CH] Execution time for single join event (m-104): 0.865 ms
+2025-05-09 15:57:51 - [ch-1] Constructing minimal join message body: ID=m-104, T=507143850441903..., gI=204648934009700...
+2025-05-09 15:57:51 - [ch-1] Cluster update message calculation time: 1.181 ms
+2025-05-09 15:57:51 - [ch-1] [CH] Key update message length for single_join(m-104): 346 bytes
+2025-05-09 15:57:51 - [ch-1] Broadcasting non-fragmented Cluster update (single_join). Size: 346. Send duration: 0.090 ms
+2025-05-09 15:57:53 - [ch-1] Control connection from ('172.16.0.1', 54526)
+2025-05-09 15:57:53 - [ch-1] Received control command: BATCH_LEAVE 2
+2025-05-09 15:57:53 - [ch-1] Batch leave requested for 2 members based on specific selection.
+2025-05-09 15:57:53 - [ch-1] Current actual members in sequence: ['m-101', 'm-102', 'm-103', 'm-104']
+2025-05-09 15:57:53 - [ch-1] Candidates for leaving (excluding CH and last member m-104): ['m-101', 'm-102', 'm-103']
+2025-05-09 15:57:53 - [ch-1] Selected members to leave: ['m-102', 'm-103']
+2025-05-09 15:57:53 - [ch-1] Cluster sequence after removal: ['ch-1', 'm-101', 'm-104']
+2025-05-09 15:57:53 - [ch-1] Recomputed K_cluster after batch leave: 582122601273836366880131423339... (took 0.794 ms)
+2025-05-09 15:57:53 - [ch-1] [CH] Execution time for 2 members batch leave event: 0.794 ms
+2025-05-09 15:57:53 - [ch-1] Constructing full state message body for event: batch_leave
+2025-05-09 15:57:53 - [ch-1] Cluster update message calculation time: 0.611 ms
+2025-05-09 15:57:53 - [ch-1] [CH] Key update message length for batch_leave: 536 bytes
+2025-05-09 15:57:53 - [ch-1] Broadcasting non-fragmented Cluster update (batch_leave). Size: 536. Send duration: 0.126 ms

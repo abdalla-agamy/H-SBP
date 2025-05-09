@@ -37,6 +37,7 @@ my_member_ids = []  # List of ALL members this CH manages (from config)
 my_tcp_listen_address = None
 my_cluster_bcast_address = None
 my_private_key = None
+my_control_listen_address = None # New for batch leave trigger
 script_dir = os.path.dirname(os.path.abspath(__file__))
 # --------------------------
 
@@ -53,6 +54,7 @@ TCP_BUFFER_SIZE = 4096
 REASSEMBLY_TIMEOUT = 15
 FRAGMENT_PREFIX = "FRAG"
 MAX_UDP_PAYLOAD_SIZE = 1400
+CH_CONTROL_BASE_PORT = 5100 # Base port for CH control commands
 # --------------------------
 
 # SBP State
@@ -511,6 +513,120 @@ def compute_single_join_update(joining_member_id, T_joining_member):
     print(f"[CH] Execution time for single join event ({joining_member_id}): {duration_ms:.3f} ms")
     return joining_member_id, T_joining_member, g_I_prev_for_joiner
 
+
+
+# --- MODIFIED: Batch Leave Logic ---
+def perform_batch_leave(num_to_leave: int):
+    """
+    Handles the logic for K members leaving the cluster.
+    Leaving members are the last K members from the current sequence,
+    EXCLUDING the CH and EXCLUDING the very last member of the sequence.
+    """
+    global k_cluster, cluster_swarm_sequence, cluster_blind_keys, cluster_intermediate_keys, cluster_g_I_prev_values, p, g, sk_i
+    print(f"Batch leave requested for {num_to_leave} members based on specific selection.")
+    start_time = time.perf_counter()
+    leaving_member_ids_actual = []
+
+    with members_lock:
+        if not cluster_swarm_sequence or len(cluster_swarm_sequence) <= 1: # Must have CH
+            print("Cannot perform batch leave: Cluster sequence too short or CH missing.")
+            return
+
+        # Current members in sequence, excluding the CH (at index 0)
+        current_actual_members = cluster_swarm_sequence[1:]
+        print(f"Current actual members in sequence: {current_actual_members}")
+
+        if not current_actual_members:
+            print("No members in cluster to leave.")
+            return
+        if num_to_leave <= 0:
+            print("Number to leave is 0 or less, no action taken.")
+            return
+
+        # Identify the pool of candidates for leaving:
+        # Exclude CH (already done by taking current_actual_members)
+        # Exclude the very last member of the current_actual_members list
+        if len(current_actual_members) <= 1: # Not enough members to exclude last and pick K
+            print("Not enough members to apply the specific leaving rule (need at least CH + 2 members + K).")
+            # Fallback: if K=1 and only 1 member exists (after CH), that one leaves? Or error?
+            # For now, let's just proceed if any candidates remain after exclusion.
+            candidates_for_leaving = []
+        else:
+            last_member_to_stay = current_actual_members[-1]
+            candidates_for_leaving = current_actual_members[:-1] # All members except the very last one
+            print(f"Candidates for leaving (excluding CH and last member {last_member_to_stay}): {candidates_for_leaving}")
+
+        if not candidates_for_leaving:
+            print("No candidates for leaving after applying exclusion rules.")
+            return
+
+        if num_to_leave > len(candidates_for_leaving):
+            print(f"Warning: Request to leave {num_to_leave}, but only {len(candidates_for_leaving)} candidates available. Removing all candidates.")
+            leaving_member_ids_actual = list(candidates_for_leaving) # Take a copy
+        else:
+            # Select the last K members from the candidates_for_leaving list
+            leaving_member_ids_actual = candidates_for_leaving[-num_to_leave:]
+
+        print(f"Selected members to leave: {leaving_member_ids_actual}")
+
+        if not leaving_member_ids_actual:
+            print("No members selected to leave after applying K.")
+            # Log time even if no action, to show trigger was processed
+            end_time_no_action = time.perf_counter()
+            duration_no_action_ms = (end_time_no_action - start_time) * 1000
+            print(f"[CH] Batch leave trigger processed, no members left. Duration: {duration_no_action_ms:.3f} ms")
+            return
+
+        # Remove from SBP state (blind keys, intermediate keys, g_I_prev, sequence)
+        # And close their TCP connections
+        for member_id in leaving_member_ids_actual:
+            if member_id in cluster_blind_keys: del cluster_blind_keys[member_id]
+            if member_id in cluster_intermediate_keys: del cluster_intermediate_keys[member_id]
+            if member_id in cluster_g_I_prev_values: del cluster_g_I_prev_values[member_id]
+            if member_id in cluster_swarm_sequence: cluster_swarm_sequence.remove(member_id)
+            if member_id in connected_members:
+                try:
+                    connected_members[member_id]['client'].close()
+                except Exception:
+                    pass
+                del connected_members[member_id]
+
+        print(f"Cluster sequence after removal: {cluster_swarm_sequence}")
+
+        # Recompute the chain fully based on the remaining members
+        # (Similar to initialize_cluster_sbp_with_initial_members but with current state)
+        temp_intermediate_keys = {MY_ID: sk_i} # Start with CH
+        temp_g_I_prev_values = {}       # No g^I_prev for CH itself
+
+        I_prev = sk_i
+        # Iterate through the *new* cluster_swarm_sequence (which excludes the leavers)
+        for member_id in cluster_swarm_sequence[1:]: # Skip CH itself
+            if member_id not in cluster_blind_keys:
+                print(f"CRITICAL ERROR: Blind key for remaining member {member_id} missing during leave recompute!")
+                # This should ideally not happen if state is consistent
+                return # Abort if critical data missing
+            T_member = cluster_blind_keys[member_id]
+            I_new = pow(T_member, I_prev, p)
+            g_I_prev = pow(g, I_prev, p)
+            temp_intermediate_keys[member_id] = I_new
+            temp_g_I_prev_values[member_id] = g_I_prev
+            I_prev = I_new
+
+        # Update the CH's global state variables for the cluster
+        cluster_intermediate_keys = temp_intermediate_keys
+        cluster_g_I_prev_values = temp_g_I_prev_values
+        k_cluster = I_prev # New cluster key is the last I_prev in the new chain
+
+    end_time = time.perf_counter()
+    duration_ms = (end_time - start_time) * 1000
+    print(f"Recomputed K_cluster after batch leave: {str(k_cluster)[:30]}... (took {duration_ms:.3f} ms)")
+    # Automation Hook for CH calculation time
+    print(f"[CH] Execution time for {len(leaving_member_ids_actual)} members batch leave event: {duration_ms:.3f} ms")
+
+    # Broadcast the new full state to remaining members
+    broadcast_cluster_update("batch_leave", leaving_member_ids=leaving_member_ids_actual)
+# --- END MODIFIED Batch Leave ---
+
 def broadcast_cluster_update(event_type, joining_member_id=None, T_joiner=None, g_I_prev_joiner=None, leaving_member_ids=None):
     """Broadcasts Intra-Cluster key update. Handles minimal join format."""
     global k_cluster, cluster_swarm_sequence, cluster_blind_keys, cluster_g_I_prev_values, my_private_key, cluster_udp_socket, my_cluster_bcast_address
@@ -692,11 +808,54 @@ def handle_member_connection(client, addr):  # Handles connections FROM Members
         if client:
             client.close()
         if member_id:
-            if handle_member_departure(member_id):
-                departure_handled = True
-    # TODO: If departure_handled, trigger full state broadcast (Step 5 Leave)
+            # Only handle connection cleanup here. SBP state update is via batch_leave.
+            handle_member_departure(member_id) # This just cleans up the connection map
 
 # --- Network Setup and Main Loop ---
+
+# --- NEW: Control Command Listener Thread ---
+def listen_for_control_commands():
+    global my_control_listen_address
+    control_socket = None
+    try:
+        control_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        control_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        control_socket.bind(my_control_listen_address)
+        control_socket.listen(1)
+        print(f"Control command listener started on {my_control_listen_address}")
+
+        while not stop_event.is_set():
+            try:
+                client, addr = control_socket.accept()
+                print(f"Control connection from {addr}")
+                data = client.recv(TCP_BUFFER_SIZE).decode('utf-8').strip()
+                print(f"Received control command: {data}")
+                if data.startswith("BATCH_LEAVE"):
+                    try:
+                        parts = data.split()
+                        if len(parts) == 2:
+                            k = int(parts[1])
+                            perform_batch_leave(k) # Trigger batch leave
+                        else:
+                            print("Invalid BATCH_LEAVE command format.")
+                    except ValueError:
+                        print("Invalid K value in BATCH_LEAVE command.")
+                else:
+                    print(f"Unknown control command: {data}")
+                client.close()
+            except Exception as e:
+                if stop_event.is_set(): break
+                print(f"Error in control command listener: {e}")
+                time.sleep(1) # Avoid busy loop on error
+    except Exception as e:
+        print(f"FATAL: Control command listener failed to start: {e}")
+        stop_event.set() # Signal other threads to stop
+    finally:
+        if control_socket:
+            control_socket.close()
+        print("Control command listener stopped.")
+# --- END NEW Control ---
+
 def setup_cluster_udp_socket():
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -827,6 +986,10 @@ def start_cluster_head():
         print("FATAL: Failed init UDP sockets.")
         stop_event.set(); return
     # ******************************
+    # *** ADD: Start the Control Command Listener Thread ***
+    control_listener_thread = threading.Thread(target=listen_for_control_commands, daemon=True)
+    control_listener_thread.start()
+    # ***************************************************
     
     if not initialize_cluster_sbp_with_initial_members():
         print("FATAL: Failed init cluster SBP.")
@@ -976,6 +1139,9 @@ if __name__ == "__main__":
         my_tcp_listen_address = (net_conf['sl_tcp_address'], my_tcp_listen_port)  # Use configured listen IP
         my_cluster_bcast_port = net_conf['cluster_bcast_base_port'] + int(MY_CLUSTER_ID) - 1
         my_cluster_bcast_address = (net_conf['inter_ch_bcast_addr'], my_cluster_bcast_port)
+        # Define control address
+        ch_control_port = CH_CONTROL_BASE_PORT + int(MY_CLUSTER_ID) -1
+        my_control_listen_address = (net_conf['sl_tcp_address'], ch_control_port) # Listen on same IP as member listener
     except Exception as e:
         print(f"FATAL: Config error finding network details: {e}")
         sys.exit(1)
@@ -1000,6 +1166,7 @@ if __name__ == "__main__":
     print(f"Initial Members (M0): {my_initial_member_ids}. Joining Member: {my_joining_member_id or 'None'}")
     print(f"SL Target: {sl_tcp_address}. Inter-CH UDP Listen: {inter_ch_bcast_address}")
     print(f"Member TCP Listen: {my_tcp_listen_address}. Cluster UDP Broadcast: {my_cluster_bcast_address}")
+    print(f"CH Control Port will be: {my_control_listen_address}") # Log for verification
     print(f"Managing Members (Full List): {my_member_ids}")
 
     start_cluster_head()
