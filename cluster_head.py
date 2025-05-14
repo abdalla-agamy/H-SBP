@@ -470,10 +470,10 @@ def initialize_cluster_sbp_with_initial_members():
         print(f"Initial g^I_prev values: {{ {', '.join([f'{k}: {str(v)[:15]}...' for k,v in cluster_g_I_prev_values.items()])} }}")
 
     # Broadcast the initial state (outside the lock)
-    if cluster_udp_socket:
-        broadcast_cluster_update("initial_setup")
-    else:
-        print("Error: Cannot broadcast initial cluster setup, UDP socket not ready.")
+    #if cluster_udp_socket:
+    #    broadcast_cluster_update("initial_setup")
+    #else:
+    #    print("Error: Cannot broadcast initial cluster setup, UDP socket not ready.")
     return True
 
 def compute_single_join_update(joining_member_id, T_joining_member):

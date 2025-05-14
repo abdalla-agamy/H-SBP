@@ -1,0 +1,24 @@
+2025-05-09 15:57:43 - [sl-0] Starting SL Node: sl-0
+2025-05-09 15:57:43 - [sl-0] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-09 15:57:43 - [sl-0] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-09 15:57:43 - [sl-0] Loaded DH params...
+2025-05-09 15:57:43 - [sl-0] Loading SL private key: /mnt/workarea/H-SBP/keys/sl_private.pem
+2025-05-09 15:57:43 - [sl-0] Starting node sl-0 as SL
+2025-05-09 15:57:43 - [sl-0] Initializing Swarm Leader...
+2025-05-09 15:57:43 - [sl-0] Initial SL state: Sequence=['sl-0'], K_main=503309170305907390416469157456...
+2025-05-09 15:57:43 - [sl-0] TCP Server listening on ('0.0.0.0', 5000) for CHs
+2025-05-09 15:57:43 - [sl-0] Broadcasting Inter-CH updates on ('172.16.0.255', 6000)
+2025-05-09 15:57:46 - [sl-0] Accepted potential CH connection from ('172.16.0.2', 46021)
+2025-05-09 15:57:46 - [sl-0] CH ch-1 connected from ('172.16.0.2', 46021) with T_ch: 26684241070018037938534613485380682448370007685082481755315983031507867339989
+2025-05-09 15:57:46 - [sl-0] Computed K_main: 260603062592535112756424024466...
+2025-05-09 15:57:46 - [sl-0] Stored g^I_prev for ch-1: 711717554122757963312702939884...
+2025-05-09 15:57:46 - [sl-0] [SL] Execution time for CH ch-1 join event calculation: 1.306 ms
+2025-05-09 15:57:46 - [sl-0] [SL] Key update message length for CH_join(ch-1): 360 bytes
+2025-05-09 15:57:46 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 360. Send duration: 0.058 ms
+2025-05-09 15:57:46 - [sl-0] Accepted potential CH connection from ('172.16.0.3', 40363)
+2025-05-09 15:57:46 - [sl-0] CH ch-2 connected from ('172.16.0.3', 40363) with T_ch: 82246560189885737889292711272955466737580394724162787486231219715852597391416
+2025-05-09 15:57:46 - [sl-0] Computed K_main: 873749429296764871131474053083...
+2025-05-09 15:57:46 - [sl-0] Stored g^I_prev for ch-2: 412158493500711008424852755950...
+2025-05-09 15:57:46 - [sl-0] [SL] Execution time for CH ch-2 join event calculation: 0.982 ms
+2025-05-09 15:57:46 - [sl-0] [SL] Key update message length for CH_join(ch-2): 531 bytes
+2025-05-09 15:57:46 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 531. Send duration: 0.049 ms

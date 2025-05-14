@@ -1,0 +1,44 @@
+2025-05-09 15:57:46 - [ch-2] Starting Cluster Head Node: ch-2
+2025-05-09 15:57:46 - [ch-2] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-09 15:57:46 - [ch-2] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-09 15:57:46 - [ch-2] Loaded DH params...
+2025-05-09 15:57:46 - [ch-2] Loading SL public key: /mnt/workarea/H-SBP/keys/sl_public.pem
+2025-05-09 15:57:46 - [ch-2] Loading own private key: /mnt/workarea/H-SBP/keys/ch2_private.pem
+2025-05-09 15:57:46 - [ch-2] Starting node ch-2 as CH for Cluster 2
+2025-05-09 15:57:46 - [ch-2] Initial Members (M0): ['m-201', 'm-202', 'm-203']. Joining Member: m-204
+2025-05-09 15:57:46 - [ch-2] SL Target: ('172.16.0.1', 5000). Inter-CH UDP Listen: ('172.16.0.255', 6000)
+2025-05-09 15:57:46 - [ch-2] Member TCP Listen: ('0.0.0.0', 5002). Cluster UDP Broadcast: ('172.16.0.255', 6002)
+2025-05-09 15:57:46 - [ch-2] CH Control Port will be: ('0.0.0.0', 5101)
+2025-05-09 15:57:46 - [ch-2] Managing Members (Full List): ['m-201', 'm-202', 'm-203', 'm-204']
+2025-05-09 15:57:46 - [ch-2] Initializing Cluster Head...
+2025-05-09 15:57:46 - [ch-2] Successfully bound Inter-CH UDP listener to ('172.16.0.255', 6000)
+2025-05-09 15:57:46 - [ch-2] Initializing SBP for Cluster 2 with initial members: ['m-201', 'm-202', 'm-203']
+2025-05-09 15:57:46 - [ch-2] Initial Cluster Sequence: ['ch-2', 'm-201', 'm-202', 'm-203']
+2025-05-09 15:57:46 - [ch-2] Initial K_cluster computed (M0 members): 520582514708190823020389126971... (took 1.668 ms)
+2025-05-09 15:57:46 - [ch-2] Initial g^I_prev values: { m-201: 822465601898857..., m-202: 683695696811680..., m-203: 153238552455295... }
+2025-05-09 15:57:46 - [ch-2] Constructing full state message body for event: initial_setup
+2025-05-09 15:57:46 - [ch-2]2025-05-09 15:57:46 - [ch-2] Control command listener started on ('0.0.0.0', 5101)
+ Cluster update message calculation time: 0.999 ms
+2025-05-09 15:57:46 - [ch-2] [CH] Key update message length for initial_setup: 710 bytes
+2025-05-09 15:57:46 - [ch-2] Broadcasting non-fragmented Cluster update (initial_setup). Size: 710. Send duration: 0.086 ms
+2025-05-09 15:57:46 - [ch-2] Attempt 1: Connecting to SL at ('172.16.0.1', 5000)...
+2025-05-09 15:57:46 - [ch-2] Connected to SL via TCP from ('172.16.0.3', 40363)
+2025-05-09 15:57:46 - [ch-2] Sent ID and T_ch to SL.
+2025-05-09 15:57:46 - [ch-2]2025-05-09 15:57:46 - [ch-2] TCP Server listening on ('0.0.0.0', 5002) for Members
+2025-05-09 15:57:46 - [ch-2] CH Initialization complete. Waiting for designated joining member...
+ Starting Inter-CH UDP listener on ('172.16.0.255', 6000)
+2025-05-09 15:57:46 - [ch-2] Processing KEY_UPDATE from SL...
+2025-05-09 15:57:46 - [ch-2] Received Inter-CH State: Seq=['sl-0', 'ch-1', 'ch-2']
+2025-05-09 15:57:46 - [ch-2] Attempting to compute K_main...
+2025-05-09 15:57:46 - [ch-2] Computed new main key K_main: 873749429296764871131474053083... (took 0.334 ms)
+2025-05-09 15:57:46 - [ch-2] [CH] As-follower, Execution time for joining SL key computation : 0.334 ms
+2025-05-09 15:57:52 - [ch-2] Accepted potential Member connection from ('172.16.0.5', 54966)
+2025-05-09 15:57:52 - [ch-2] Designated joining member m-204 connected from ('172.16.0.5', 54966) with T_i: 70094231033403432710394920715064285710090561406362291742706494944609150514196
+2025-05-09 15:57:52 - [ch-2] Computing single join update for m-204
+2025-05-09 15:57:52 - [ch-2] Updated K_cluster after join: 791983043953299883837640826890... (took 0.647 ms)
+2025-05-09 15:57:52 - [ch-2] Calculated g^I_prev for joiner m-204: 535674172541473538012682369711...
+2025-05-09 15:57:52 - [ch-2] [CH] Execution time for single join event (m-204): 0.647 ms
+2025-05-09 15:57:52 - [ch-2] Constructing minimal join message body: ID=m-204, T=700942310334034..., gI=535674172541473...
+2025-05-09 15:57:52 - [ch-2] Cluster update message calculation time: 0.992 ms
+2025-05-09 15:57:52 - [ch-2] [CH] Key update message length for single_join(m-204): 346 bytes
+2025-05-09 15:57:52 - [ch-2] Broadcasting non-fragmented Cluster update (single_join). Size: 346. Send duration: 0.080 ms
