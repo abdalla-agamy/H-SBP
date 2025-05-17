@@ -22,7 +22,7 @@ CONFIG_FILE_PATH = os.path.join(HSBP_SCRIPT_DIR, "config/hsbp_config.json")
 PYTHON_EXEC = "/opt/core/venv/bin/python3"
 HOST_LOG_DIR = Path("/mnt/workarea/H-SBP/logs")
 NODE_LOG_DIR_ABS = "/mnt/workarea/H-SBP/logs"
-NUM_RUNS = 4 # Number of times to repeat the scenario for each swarm size
+NUM_RUNS = 10 # Number of times to repeat the scenario for each swarm size
 SWARM_SIZES = [1000, 2000, 3000, 4000, 5000] # Example total swarm sizes
 NUM_CLUSTERS = 5
 TARGET_CLUSTER_ID_FOR_JOIN_LEAVE = "1" # Always test join/leave on Cluster 1
@@ -35,6 +35,7 @@ NODE_IDS = {
     "CH3": "ch-3",
     "CH4": "ch-4",
     "CH5": "ch-5",
+    "M10001": "m-10001",
     "M10201": "m-10201",
     "M10401": "m-10401",
     "M10601": "m-10601",
@@ -54,6 +55,7 @@ NODE_TARGET_IPS = {
      9: "172.16.0.9",
      10: "172.16.0.10",
      11: "172.16.0.11",
+     12: "172.16.0.12",
 }
 IP4_MASK = 16
 
@@ -138,7 +140,14 @@ def main():
                 continue
             node_config_id_to_key[target_joining_member_config_id] = target_joining_member_key
             nodes_to_create_in_core.append(target_joining_member_key)
-
+            
+            # Identify target initial member for measurement, e.g., the first initial member of Cluster 1
+            target_initial_member_config_id = current_config_data['structure']['clusters'][TARGET_CLUSTER_ID_FOR_JOIN_LEAVE]['initial_members'][0]
+            target_initial_member_key = [k for k, v in NODE_IDS.items() if v == target_initial_member_config_id][0] # Find its friendly key
+            nodes_to_create_in_core.append(target_initial_member_key) # Add it
+            # ... (Update NODE_TARGET_IPS and positions for this additional node) ...
+            
+            
 
             # Clear/Truncate logs for this swarm size before starting runs
             for node_key in nodes_to_create_in_core:
@@ -173,7 +182,8 @@ def main():
                         "SL": Position(x=300, y=100), "CH1": Position(x=150, y=250),
                         "CH2": Position(x=450, y=250), "CH3": Position(x=200, y=100),
                         "CH4": Position(x=400, y=100), "CH5": Position(x=300, y=400), # Example positions
-                        target_joining_member_key: Position(x=150, y=350), # Joining CH1
+                        target_joining_member_key: Position(x=100, y=350), # Joining CH1
+                        target_initial_member_key: Position(x=200, y=350), # Joining CH1
                     }
 
                     for name_key in nodes_to_create_in_core:
@@ -225,7 +235,19 @@ def main():
                         core.node_command(session.id, nodes[ch_name_key].id, ch_cmd, wait=False, shell=True)
                         time.sleep(1) # Stagger CH starts
 
-                    logging.info(f"Run {run_num}: SL/CHs running. Waiting 2s for init...")
+                    # --- Start M0 Member for Measurement (e.g., m-1001) ---
+                    if target_initial_member_key in nodes and target_initial_member_key in node_ips:
+                        member_script = os.path.join(HSBP_SCRIPT_DIR, "member.py")
+                        member_log = os.path.join(NODE_LOG_DIR_ABS, f"{target_initial_member_config_id}.log")
+                        ch_key_for_m0 = f"CH{TARGET_CLUSTER_ID_FOR_JOIN_LEAVE}" # e.g., CH1
+                        member_cmd = f"{PYTHON_EXEC} -u {member_script} --id {target_initial_member_config_id} --config {CONFIG_FILE_PATH} --ch-ip {node_ips[ch_key_for_m0]} {redirect_op} {member_log} 2>&1"
+                        logging.info(f"Run {run_num}: Executing INITIAL member {target_initial_member_key} for {ch_key_for_m0}")
+                        core.node_command(session.id, nodes[target_initial_member_key].id, member_cmd, wait=False, shell=True)
+                    else:
+                        logging.warning(f"Run {run_num}: Could not start target initial member {target_initial_member_key}")
+                    # ---
+
+                    logging.info(f"Run {run_num}: SL/CHs/TargetInitialMember running. Waiting 2s for init...")
                     time.sleep(2)
 
                     # Start ONE Joining Member (e.g., M1200 for CH1)
@@ -260,7 +282,7 @@ def main():
                         core.node_command(session.id, nodes["SL"].id, trigger_cmd, wait=True, shell=True)
                     else:
                         logging.error(f"Run {run_num}: {ch_to_trigger_leave} IP not found, cannot trigger batch leave.")
-
+                    
                     logging.info(f"Run {run_num}: Batch Leave triggered. Waiting 5s...")
                     time.sleep(5) # Time for leave to process
 

@@ -83,7 +83,7 @@ def print_table_row(role, Act_as, event, metric, unit, data_list):
         max_s = f"{stats['max']:.0f}" if isinstance(stats['max'], float) else str(stats['max'])
         mean_s = f"{stats['mean']:.0f}" if isinstance(stats['mean'], float) else str(stats['mean'])
 
-    print(f"| {role:<12} | {Act_as:<10}| {event:<25} | {metric + ' (' + unit + ')':<20} | {min_s:>7} | {max_s:>7} | {mean_s:>7} | {str(stats['count']):>5} |")
+    print(f"| {role:<20} | {Act_as:<10}| {event:<20} | {metric + ' (' + unit + ')':<20} | {min_s:>7} | {max_s:>7} | {mean_s:>7} | {str(stats['count']):>5} |")
 # --- END NEW ---
 
 
@@ -100,6 +100,7 @@ def main():
         target_ch_config = config_data['structure']['clusters'][TARGET_CLUSTER_ID_FOR_METRICS]
         target_ch_id_config = target_ch_config['ch_id']
         target_joining_member_id_config = target_ch_config.get('joining_member')
+        target_initial_member_id_config = config_data['structure']['clusters'][TARGET_CLUSTER_ID_FOR_METRICS]['initial_members'][0]
     except Exception as e: print(f"Error loading config {CONFIG_FILE_FOR_STRUCTURE}: {e}"); return
 
     all_metrics = {
@@ -131,29 +132,37 @@ def main():
     ch_batch_leave_lengths = [x for x in ch_log_results.get("batch_leave_length", [])] # Length is group 2
 
     # Parse Target Joining Member log
-    member_joining_times = []; member_post_leave_times = []
+    member_joining_times = [];
     if target_joining_member_id_config:
         member_log_file = LOG_DIR / f"{target_joining_member_id_config}.log"
-        member_patterns = {"joining_time": member_joining_time_pattern, "post_leave_key_comp_time": member_post_leave_time_pattern}
+        member_patterns = {"joining_time": member_joining_time_pattern}
         member_log_results = parse_log_file(member_log_file, member_patterns)
         member_joining_times = member_log_results.get("joining_time",[])
         member_post_leave_times = member_log_results.get("post_leave_key_comp_time",[])
+        
+    # Parse Target Initial Member log
+    member_post_leave_times = []
+    if target_initial_member_id_config:
+        member_log_file = LOG_DIR / f"{target_initial_member_id_config}.log"
+        member_patterns = {"post_leave_key_comp_time": member_post_leave_time_pattern}
+        member_log_results = parse_log_file(member_log_file, member_patterns)
+        member_post_leave_times = member_log_results.get("post_leave_key_comp_time",[])
 
     # --- Print Statistics Table ---
-    print(f"\n\n========= H-SBP METRICS (For {num_total_followers} followers) =========")
-    header = f"| {'Role':<12} | {'Act As':<10}| {'Event':<25} | {'Metric':<20} | {'Min':>7} | {'Max':>7} | {'Mean':>7} | {'Count':>5} |"
+    print(f"\n\n============= H-SBP METRICS (For {num_total_followers} followers) =============")
+    header = f"| {'Role':<20} | {'Act As':<10}| {'Event':<20} | {'Metric':<20} | {'Min':>7} | {'Max':>7} | {'Mean':>7} | {'Count':>5} |"
     print("=" * len(header))
     print(header)
     print("=" * len(header))
 
     # SL Metrics
     if sl_target_ch_join_times or sl_target_ch_join_lengths:
-        print_table_row("SL","Leader", f"Join ({target_ch_id_config})", "Calc Time", "ms", sl_target_ch_join_times)
-        print_table_row("SL","Leader", f"Join ({target_ch_id_config})", "Msg Len", "bytes", sl_target_ch_join_lengths)
+        print_table_row("SL [SBP extra]","Leader", f"Join ({target_ch_id_config})", "Calc Time", "ms", sl_target_ch_join_times)
+        print_table_row("SL [SBP extra]","Leader", f"Join ({target_ch_id_config})", "Msg Len", "bytes", sl_target_ch_join_lengths)
         print("-" * len(header))
 
     # Target CH Metrics
-    print_table_row(f"CH({target_ch_id_config})","Follower", "Join (SL)", "Time", "ms", ch_as_follower_times)
+    print_table_row(f"CH({target_ch_id_config}) [SBP extra]","Follower", "Join (SL)", "Time", "ms", ch_as_follower_times)
     print_table_row(f"CH({target_ch_id_config})","Leader", f"Join ({target_joining_member_id_config})", "Calc Time", "ms", ch_single_member_join_times)
     print_table_row(f"CH({target_ch_id_config})","Leader", f"Join ({target_joining_member_id_config})", "Msg Len", "bytes", ch_single_member_join_lengths)
     print_table_row(f"CH({target_ch_id_config})","Leader", "Batch Leave", "Calc Time", "ms", ch_batch_leave_times)
@@ -162,8 +171,9 @@ def main():
 
     # Target Joining Member Metrics
     if target_joining_member_id_config:
-        print_table_row(f"Member({target_joining_member_id_config})","Follower", f"Joining ({target_ch_id_config})", "Time", "ms", member_joining_times)
-        print_table_row(f"Member({target_joining_member_id_config})","Follower", f"Post-Leave ({target_ch_id_config})", "Time", "ms", member_post_leave_times)
+        print_table_row(f"Member({target_joining_member_id_config})","Follower", f"Join ({target_ch_id_config})", "Time", "ms", member_joining_times)
+    if target_initial_member_id_config:
+        print_table_row(f"Member({target_initial_member_id_config})","Follower", f"Post-Leave ({target_ch_id_config})", "Time", "ms", member_post_leave_times)
 
     print("=" * len(header))
 

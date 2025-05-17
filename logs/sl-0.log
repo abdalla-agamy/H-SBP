@@ -1,90 +1,450 @@
-2025-05-14 05:19:24 - [sl-0] Starting SL Node: sl-0
-2025-05-14 05:19:24 - [sl-0] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
-2025-05-14 05:19:24 - [sl-0] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
-2025-05-14 05:19:24 - [sl-0] Loaded DH params...
-2025-05-14 05:19:24 - [sl-0] Loading SL private key: /mnt/workarea/H-SBP/keys/sl_private.pem
-2025-05-14 05:19:24 - [sl-0] Starting node sl-0 as SL
-2025-05-14 05:19:24 - [sl-0] Initializing Swarm Leader...
-2025-05-14 05:19:24 - [sl-0] Initial SL state: Sequence=['sl-0'], K_main=511433937887090012529390504093...
-2025-05-14 05:19:24 - [sl-0] TCP Server listening on ('0.0.0.0', 5000) for CHs
-2025-05-14 05:19:24 - [sl-0] Broadcasting Inter-CH updates on ('172.16.0.255', 6000)
-2025-05-14 05:19:28 - [sl-0] Accepted potential CH connection from ('172.16.0.2', 33379)
-2025-05-14 05:19:28 - [sl-0] CH ch-1 connected from ('172.16.0.2', 33379) with T_ch: 56149540278611465941151928624753019771243993261351753195822656693251031260722
-2025-05-14 05:19:28 - [sl-0] Computed K_main: 390590137411951067349471848223...
-2025-05-14 05:19:28 - [sl-0] Stored g^I_prev for ch-1: 105621551302327280165988879078...
-2025-05-14 05:19:28 - [sl-0] [SL] Execution time for CH ch-1 join event calculation: 1.229 ms
-2025-05-14 05:19:28 - [sl-0] [SL] Key update message length for CH_join(ch-1): 360 bytes
-2025-05-14 05:19:28 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 360. Send duration: 0.062 ms
-2025-05-14 05:19:29 - [sl-0] Accepted potential CH connection from ('172.16.0.3', 34043)
-2025-05-14 05:19:29 - [sl-0] CH ch-2 connected from ('172.16.0.3', 34043) with T_ch: 50358680353051208264080344168046149548466882203704993304450885377435284406968
-2025-05-14 05:19:29 - [sl-0] Computed K_main: 397874175664540601123416145808...
-2025-05-14 05:19:29 - [sl-0] Stored g^I_prev for ch-2: 299595489966998738456459013792...
-2025-05-14 05:19:29 - [sl-0] [SL] Execution time for CH ch-2 join event calculation: 0.572 ms
-2025-05-14 05:19:29 - [sl-0] [SL] Key update message length for CH_join(ch-2): 530 bytes
-2025-05-14 05:19:29 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 530. Send duration: 0.056 ms
-2025-05-14 05:19:30 - [sl-0] Accepted potential CH connection from ('172.16.0.4', 37327)
-2025-05-14 05:19:30 - [sl-0] CH ch-3 connected from ('172.16.0.4', 37327) with T_ch: 79165082279571660695690674702474594385313684808047238664176637775088166821958
-2025-05-14 05:19:30 - [sl-0] Computed K_main: 130274966943463902664346915379...
-2025-05-14 05:19:30 - [sl-0] Stored g^I_prev for ch-3: 321852883888260745132530923295...
-2025-05-14 05:19:30 - [sl-0] [SL] Execution time for CH ch-3 join event calculation: 0.310 ms
-2025-05-14 05:19:30 - [sl-0] [SL] Key update message length for CH_join(ch-3): 701 bytes
-2025-05-14 05:19:30 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 701. Send duration: 0.048 ms
-2025-05-14 05:19:31 - [sl-0] Accepted potential CH connection from ('172.16.0.5', 46435)
-2025-05-14 05:19:31 - [sl-0] CH ch-4 connected from ('172.16.0.5', 46435) with T_ch: 49841117725307498566374790831492843896517636755759236132879687141127262068120
-2025-05-14 05:19:31 - [sl-0] Computed K_main: 557380539008300389254044526200...
-2025-05-14 05:19:31 - [sl-0] Stored g^I_prev for ch-4: 806740118873802954283314544450...
-2025-05-14 05:19:31 - [sl-0] [SL] Execution time for CH ch-4 join event calculation: 0.290 ms
-2025-05-14 05:19:31 - [sl-0] [SL] Key update message length for CH_join(ch-4): 871 bytes
-2025-05-14 05:19:31 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 871. Send duration: 0.060 ms
-2025-05-14 05:19:32 - [sl-0] Accepted potential CH connection from ('172.16.0.6', 45955)
-2025-05-14 05:19:32 - [sl-0] CH ch-5 connected from ('172.16.0.6', 45955) with T_ch: 24574001279253836591133422522736518468702440776669866022083400084915260361740
-2025-05-14 05:19:32 - [sl-0] Computed K_main: 782209611615622648927752907145...
-2025-05-14 05:19:32 - [sl-0] Stored g^I_prev for ch-5: 466788871911815332495431801814...
-2025-05-14 05:19:32 - [sl-0] [SL] Execution time for CH ch-5 join event calculation: 0.590 ms
-2025-05-14 05:19:32 - [sl-0] [SL] Key update message length for CH_join(ch-5): 1042 bytes
-2025-05-14 05:19:32 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 1042. Send duration: 0.133 ms
-2025-05-14 05:20:00 - [sl-0] Starting SL Node: sl-0
-2025-05-14 05:20:00 - [sl-0] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
-2025-05-14 05:20:00 - [sl-0] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
-2025-05-14 05:20:00 - [sl-0] Loaded DH params...
-2025-05-14 05:20:00 - [sl-0] Loading SL private key: /mnt/workarea/H-SBP/keys/sl_private.pem
-2025-05-14 05:20:00 - [sl-0] Starting node sl-0 as SL
-2025-05-14 05:20:00 - [sl-0] Initializing Swarm Leader...
-2025-05-14 05:20:00 - [sl-0] Initial SL state: Sequence=['sl-0'], K_main=511433937887090012529390504093...
-2025-05-14 05:20:00 - [sl-0] TCP Server listening on ('0.0.0.0', 5000) for CHs
-2025-05-14 05:20:00 - [sl-0] Broadcasting Inter-CH updates on ('172.16.0.255', 6000)
-2025-05-14 05:20:05 - [sl-0] Accepted potential CH connection from ('172.16.0.2', 45529)
-2025-05-14 05:20:05 - [sl-0] CH ch-1 connected from ('172.16.0.2', 45529) with T_ch: 56149540278611465941151928624753019771243993261351753195822656693251031260722
-2025-05-14 05:20:05 - [sl-0] Computed K_main: 390590137411951067349471848223...
-2025-05-14 05:20:05 - [sl-0] Stored g^I_prev for ch-1: 105621551302327280165988879078...
-2025-05-14 05:20:05 - [sl-0] [SL] Execution time for CH ch-1 join event calculation: 0.934 ms
-2025-05-14 05:20:05 - [sl-0] [SL] Key update message length for CH_join(ch-1): 360 bytes
-2025-05-14 05:20:05 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 360. Send duration: 0.070 ms
-2025-05-14 05:20:06 - [sl-0] Accepted potential CH connection from ('172.16.0.3', 41547)
-2025-05-14 05:20:06 - [sl-0] CH ch-2 connected from ('172.16.0.3', 41547) with T_ch: 50358680353051208264080344168046149548466882203704993304450885377435284406968
-2025-05-14 05:20:06 - [sl-0] Computed K_main: 397874175664540601123416145808...
-2025-05-14 05:20:06 - [sl-0] Stored g^I_prev for ch-2: 299595489966998738456459013792...
-2025-05-14 05:20:06 - [sl-0] [SL] Execution time for CH ch-2 join event calculation: 1.286 ms
-2025-05-14 05:20:06 - [sl-0] [SL] Key update message length for CH_join(ch-2): 530 bytes
-2025-05-14 05:20:06 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 530. Send duration: 0.108 ms
-2025-05-14 05:20:07 - [sl-0] Accepted potential CH connection from ('172.16.0.4', 33219)
-2025-05-14 05:20:07 - [sl-0] CH ch-3 connected from ('172.16.0.4', 33219) with T_ch: 79165082279571660695690674702474594385313684808047238664176637775088166821958
-2025-05-14 05:20:07 - [sl-0] Computed K_main: 130274966943463902664346915379...
-2025-05-14 05:20:07 - [sl-0] Stored g^I_prev for ch-3: 321852883888260745132530923295...
-2025-05-14 05:20:07 - [sl-0] [SL] Execution time for CH ch-3 join event calculation: 0.623 ms
-2025-05-14 05:20:07 - [sl-0] [SL] Key update message length for CH_join(ch-3): 701 bytes
-2025-05-14 05:20:07 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 701. Send duration: 0.133 ms
-2025-05-14 05:20:08 - [sl-0] Accepted potential CH connection from ('172.16.0.5', 33527)
-2025-05-14 05:20:08 - [sl-0] CH ch-4 connected from ('172.16.0.5', 33527) with T_ch: 49841117725307498566374790831492843896517636755759236132879687141127262068120
-2025-05-14 05:20:08 - [sl-0] Computed K_main: 557380539008300389254044526200...
-2025-05-14 05:20:08 - [sl-0] Stored g^I_prev for ch-4: 806740118873802954283314544450...
-2025-05-14 05:20:08 - [sl-0] [SL] Execution time for CH ch-4 join event calculation: 0.634 ms
-2025-05-14 05:20:08 - [sl-0] [SL] Key update message length for CH_join(ch-4): 871 bytes
-2025-05-14 05:20:08 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 871. Send duration: 0.142 ms
-2025-05-14 05:20:09 - [sl-0] Accepted potential CH connection from ('172.16.0.6', 46531)
-2025-05-14 05:20:09 - [sl-0] CH ch-5 connected from ('172.16.0.6', 46531) with T_ch: 24574001279253836591133422522736518468702440776669866022083400084915260361740
-2025-05-14 05:20:09 - [sl-0] Computed K_main: 782209611615622648927752907145...
-2025-05-14 05:20:09 - [sl-0] Stored g^I_prev for ch-5: 466788871911815332495431801814...
-2025-05-14 05:20:09 - [sl-0] [SL] Execution time for CH ch-5 join event calculation: 0.284 ms
-2025-05-14 05:20:09 - [sl-0] [SL] Key update message length for CH_join(ch-5): 1042 bytes
-2025-05-14 05:20:09 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 1042. Send duration: 0.070 ms
+2025-05-17 08:02:20 - [sl-0] Starting SL Node: sl-0
+2025-05-17 08:02:20 - [sl-0] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 08:02:20 - [sl-0] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 08:02:20 - [sl-0] Loaded DH params...
+2025-05-17 08:02:20 - [sl-0] Loading SL private key: /mnt/workarea/H-SBP/keys/sl_private.pem
+2025-05-17 08:02:20 - [sl-0] Starting node sl-0 as SL
+2025-05-17 08:02:20 - [sl-0] Initializing Swarm Leader...
+2025-05-17 08:02:20 - [sl-0] Initial SL state: Sequence=['sl-0'], K_main=795201121773694405337690656498...
+2025-05-17 08:02:20 - [sl-0] TCP Server listening on ('0.0.0.0', 5000) for CHs
+2025-05-17 08:02:20 - [sl-0] Broadcasting Inter-CH updates on ('172.16.0.255', 6000)
+2025-05-17 08:02:24 - [sl-0] Accepted potential CH connection from ('172.16.0.2', 44285)
+2025-05-17 08:02:24 - [sl-0] CH ch-1 connected from ('172.16.0.2', 44285) with T_ch: 82228973595636604862795676252409951402460251433721464449029986050056367244505
+2025-05-17 08:02:24 - [sl-0] Computed K_main: 287715916325242190831157597889...
+2025-05-17 08:02:24 - [sl-0] Stored g^I_prev for ch-1: 444983096245734772376210094858...
+2025-05-17 08:02:24 - [sl-0] [SL] Execution time for CH ch-1 join event calculation: 2.310 ms
+2025-05-17 08:02:24 - [sl-0] [SL] Key update message length for CH_join(ch-1): 360 bytes
+2025-05-17 08:02:24 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 360. Send duration: 0.123 ms
+2025-05-17 08:02:25 - [sl-0] Accepted potential CH connection from ('172.16.0.3', 38717)
+2025-05-17 08:02:25 - [sl-0] CH ch-2 connected from ('172.16.0.3', 38717) with T_ch: 78077038693504108745445187780631681307268116321421780494839572417813941100563
+2025-05-17 08:02:25 - [sl-0] Computed K_main: 754335331663833690151653842107...
+2025-05-17 08:02:25 - [sl-0] Stored g^I_prev for ch-2: 727506396102569863590295574566...
+2025-05-17 08:02:25 - [sl-0] [SL] Execution time for CH ch-2 join event calculation: 1.170 ms
+2025-05-17 08:02:25 - [sl-0] [SL] Key update message length for CH_join(ch-2): 531 bytes
+2025-05-17 08:02:25 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 531. Send duration: 0.113 ms
+2025-05-17 08:02:26 - [sl-0] Accepted potential CH connection from ('172.16.0.4', 39749)
+2025-05-17 08:02:26 - [sl-0] CH ch-3 connected from ('172.16.0.4', 39749) with T_ch: 48079473562778616762448461737932260462499401041869846037582490335664033339244
+2025-05-17 08:02:26 - [sl-0] Computed K_main: 238866565111897124440550780632...
+2025-05-17 08:02:26 - [sl-0] Stored g^I_prev for ch-3: 645730307975451714416887768917...
+2025-05-17 08:02:26 - [sl-0] [SL] Execution time for CH ch-3 join event calculation: 0.501 ms
+2025-05-17 08:02:26 - [sl-0] [SL] Key update message length for CH_join(ch-3): 702 bytes
+2025-05-17 08:02:26 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 702. Send duration: 0.091 ms
+2025-05-17 08:02:27 - [sl-0] Accepted potential CH connection from ('172.16.0.5', 35757)
+2025-05-17 08:02:27 - [sl-0] CH ch-4 connected from ('172.16.0.5', 35757) with T_ch: 38518195493181983548724934956043234284622563163478406988115654461367560022986
+2025-05-17 08:02:27 - [sl-0] Computed K_main: 690244911904857755257192609260...
+2025-05-17 08:02:27 - [sl-0] Stored g^I_prev for ch-4: 825576824443777881172718223083...
+2025-05-17 08:02:27 - [sl-0] [SL] Execution time for CH ch-4 join event calculation: 0.511 ms
+2025-05-17 08:02:27 - [sl-0] [SL] Key update message length for CH_join(ch-4): 873 bytes
+2025-05-17 08:02:27 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 873. Send duration: 0.057 ms
+2025-05-17 08:02:28 - [sl-0] Accepted potential CH connection from ('172.16.0.6', 39113)
+2025-05-17 08:02:28 - [sl-0] CH ch-5 connected from ('172.16.0.6', 39113) with T_ch: 75528872464384615961167455403025489218493954816263060973501317686239257259790
+2025-05-17 08:02:28 - [sl-0] Computed K_main: 233427930218056547033199517884...
+2025-05-17 08:02:28 - [sl-0] Stored g^I_prev for ch-5: 224377203109888538813630079270...
+2025-05-17 08:02:28 - [sl-0] [SL] Execution time for CH ch-5 join event calculation: 0.713 ms
+2025-05-17 08:02:28 - [sl-0] [SL] Key update message length for CH_join(ch-5): 1044 bytes
+2025-05-17 08:02:28 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 1044. Send duration: 0.117 ms
+2025-05-17 08:02:56 - [sl-0] Starting SL Node: sl-0
+2025-05-17 08:02:56 - [sl-0] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 08:02:56 - [sl-0] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 08:02:56 - [sl-0] Loaded DH params...
+2025-05-17 08:02:56 - [sl-0] Loading SL private key: /mnt/workarea/H-SBP/keys/sl_private.pem
+2025-05-17 08:02:56 - [sl-0] Starting node sl-0 as SL
+2025-05-17 08:02:56 - [sl-0] Initializing Swarm Leader...
+2025-05-17 08:02:56 - [sl-0] Initial SL state: Sequence=['sl-0'], K_main=795201121773694405337690656498...
+2025-05-17 08:02:56 - [sl-0] TCP Server listening on ('0.0.0.0', 5000) for CHs
+2025-05-17 08:02:56 - [sl-0] Broadcasting Inter-CH updates on ('172.16.0.255', 6000)
+2025-05-17 08:03:01 - [sl-0] Accepted potential CH connection from ('172.16.0.2', 43639)
+2025-05-17 08:03:01 - [sl-0] CH ch-1 connected from ('172.16.0.2', 43639) with T_ch: 82228973595636604862795676252409951402460251433721464449029986050056367244505
+2025-05-17 08:03:01 - [sl-0] Computed K_main: 287715916325242190831157597889...
+2025-05-17 08:03:01 - [sl-0] Stored g^I_prev for ch-1: 444983096245734772376210094858...
+2025-05-17 08:03:01 - [sl-0] [SL] Execution time for CH ch-1 join event calculation: 0.937 ms
+2025-05-17 08:03:01 - [sl-0] [SL] Key update message length for CH_join(ch-1): 360 bytes
+2025-05-17 08:03:01 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 360. Send duration: 0.055 ms
+2025-05-17 08:03:02 - [sl-0] Accepted potential CH connection from ('172.16.0.3', 33621)
+2025-05-17 08:03:02 - [sl-0] CH ch-2 connected from ('172.16.0.3', 33621) with T_ch: 78077038693504108745445187780631681307268116321421780494839572417813941100563
+2025-05-17 08:03:02 - [sl-0] Computed K_main: 754335331663833690151653842107...
+2025-05-17 08:03:02 - [sl-0] Stored g^I_prev for ch-2: 727506396102569863590295574566...
+2025-05-17 08:03:02 - [sl-0] [SL] Execution time for CH ch-2 join event calculation: 1.260 ms
+2025-05-17 08:03:02 - [sl-0] [SL] Key update message length for CH_join(ch-2): 531 bytes
+2025-05-17 08:03:02 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 531. Send duration: 0.113 ms
+2025-05-17 08:03:03 - [sl-0] Accepted potential CH connection from ('172.16.0.4', 37689)
+2025-05-17 08:03:03 - [sl-0] CH ch-3 connected from ('172.16.0.4', 37689) with T_ch: 48079473562778616762448461737932260462499401041869846037582490335664033339244
+2025-05-17 08:03:03 - [sl-0] Computed K_main: 238866565111897124440550780632...
+2025-05-17 08:03:03 - [sl-0] Stored g^I_prev for ch-3: 645730307975451714416887768917...
+2025-05-17 08:03:03 - [sl-0] [SL] Execution time for CH ch-3 join event calculation: 0.295 ms
+2025-05-17 08:03:03 - [sl-0] [SL] Key update message length for CH_join(ch-3): 702 bytes
+2025-05-17 08:03:03 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 702. Send duration: 0.066 ms
+2025-05-17 08:03:04 - [sl-0] Accepted potential CH connection from ('172.16.0.5', 40067)
+2025-05-17 08:03:04 - [sl-0] CH ch-4 connected from ('172.16.0.5', 40067) with T_ch: 38518195493181983548724934956043234284622563163478406988115654461367560022986
+2025-05-17 08:03:04 - [sl-0] Computed K_main: 690244911904857755257192609260...
+2025-05-17 08:03:04 - [sl-0] Stored g^I_prev for ch-4: 825576824443777881172718223083...
+2025-05-17 08:03:04 - [sl-0] [SL] Execution time for CH ch-4 join event calculation: 0.613 ms
+2025-05-17 08:03:04 - [sl-0] [SL] Key update message length for CH_join(ch-4): 873 bytes
+2025-05-17 08:03:04 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 873. Send duration: 0.119 ms
+2025-05-17 08:03:05 - [sl-0] Accepted potential CH connection from ('172.16.0.6', 43639)
+2025-05-17 08:03:05 - [sl-0] CH ch-5 connected from ('172.16.0.6', 43639) with T_ch: 75528872464384615961167455403025489218493954816263060973501317686239257259790
+2025-05-17 08:03:05 - [sl-0] Computed K_main: 233427930218056547033199517884...
+2025-05-17 08:03:05 - [sl-0] Stored g^I_prev for ch-5: 224377203109888538813630079270...
+2025-05-17 08:03:05 - [sl-0] [SL] Execution time for CH ch-5 join event calculation: 0.649 ms
+2025-05-17 08:03:05 - [sl-0] [SL] Key update message length for CH_join(ch-5): 1044 bytes
+2025-05-17 08:03:05 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 1044. Send duration: 0.123 ms
+2025-05-17 08:03:33 - [sl-0] Starting SL Node: sl-0
+2025-05-17 08:03:33 - [sl-0] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 08:03:33 - [sl-0] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 08:03:33 - [sl-0] Loaded DH params...
+2025-05-17 08:03:33 - [sl-0] Loading SL private key: /mnt/workarea/H-SBP/keys/sl_private.pem
+2025-05-17 08:03:33 - [sl-0] Starting node sl-0 as SL
+2025-05-17 08:03:33 - [sl-0] Initializing Swarm Leader...
+2025-05-17 08:03:33 - [sl-0] Initial SL state: Sequence=['sl-0'], K_main=795201121773694405337690656498...
+2025-05-17 08:03:33 - [sl-0] TCP Server listening on ('0.0.0.0', 5000) for CHs
+2025-05-17 08:03:33 - [sl-0] Broadcasting Inter-CH updates on ('172.16.0.255', 6000)
+2025-05-17 08:03:37 - [sl-0] Accepted potential CH connection from ('172.16.0.2', 40425)
+2025-05-17 08:03:37 - [sl-0] CH ch-1 connected from ('172.16.0.2', 40425) with T_ch: 82228973595636604862795676252409951402460251433721464449029986050056367244505
+2025-05-17 08:03:37 - [sl-0] Computed K_main: 287715916325242190831157597889...
+2025-05-17 08:03:37 - [sl-0] Stored g^I_prev for ch-1: 444983096245734772376210094858...
+2025-05-17 08:03:37 - [sl-0] [SL] Execution time for CH ch-1 join event calculation: 2.176 ms
+2025-05-17 08:03:37 - [sl-0] [SL] Key update message length for CH_join(ch-1): 360 bytes
+2025-05-17 08:03:37 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 360. Send duration: 0.064 ms
+2025-05-17 08:03:38 - [sl-0] Accepted potential CH connection from ('172.16.0.3', 46303)
+2025-05-17 08:03:38 - [sl-0] CH ch-2 connected from ('172.16.0.3', 46303) with T_ch: 78077038693504108745445187780631681307268116321421780494839572417813941100563
+2025-05-17 08:03:38 - [sl-0] Computed K_main: 754335331663833690151653842107...
+2025-05-17 08:03:38 - [sl-0] Stored g^I_prev for ch-2: 727506396102569863590295574566...
+2025-05-17 08:03:38 - [sl-0] [SL] Execution time for CH ch-2 join event calculation: 0.500 ms
+2025-05-17 08:03:38 - [sl-0] [SL] Key update message length for CH_join(ch-2): 531 bytes
+2025-05-17 08:03:38 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 531. Send duration: 0.054 ms
+2025-05-17 08:03:39 - [sl-0] Accepted potential CH connection from ('172.16.0.4', 36413)
+2025-05-17 08:03:39 - [sl-0] CH ch-3 connected from ('172.16.0.4', 36413) with T_ch: 48079473562778616762448461737932260462499401041869846037582490335664033339244
+2025-05-17 08:03:39 - [sl-0] Computed K_main: 238866565111897124440550780632...
+2025-05-17 08:03:39 - [sl-0] Stored g^I_prev for ch-3: 645730307975451714416887768917...
+2025-05-17 08:03:39 - [sl-0] [SL] Execution time for CH ch-3 join event calculation: 0.641 ms
+2025-05-17 08:03:39 - [sl-0] [SL] Key update message length for CH_join(ch-3): 702 bytes
+2025-05-17 08:03:39 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 702. Send duration: 0.117 ms
+2025-05-17 08:03:40 - [sl-0] Accepted potential CH connection from ('172.16.0.5', 45899)
+2025-05-17 08:03:40 - [sl-0] CH ch-4 connected from ('172.16.0.5', 45899) with T_ch: 38518195493181983548724934956043234284622563163478406988115654461367560022986
+2025-05-17 08:03:40 - [sl-0] Computed K_main: 690244911904857755257192609260...
+2025-05-17 08:03:40 - [sl-0] Stored g^I_prev for ch-4: 825576824443777881172718223083...
+2025-05-17 08:03:40 - [sl-0] [SL] Execution time for CH ch-4 join event calculation: 0.265 ms
+2025-05-17 08:03:40 - [sl-0] [SL] Key update message length for CH_join(ch-4): 873 bytes
+2025-05-17 08:03:40 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 873. Send duration: 0.059 ms
+2025-05-17 08:03:41 - [sl-0] Accepted potential CH connection from ('172.16.0.6', 42373)
+2025-05-17 08:03:41 - [sl-0] CH ch-5 connected from ('172.16.0.6', 42373) with T_ch: 75528872464384615961167455403025489218493954816263060973501317686239257259790
+2025-05-17 08:03:41 - [sl-0] Computed K_main: 233427930218056547033199517884...
+2025-05-17 08:03:41 - [sl-0] Stored g^I_prev for ch-5: 224377203109888538813630079270...
+2025-05-17 08:03:41 - [sl-0] [SL] Execution time for CH ch-5 join event calculation: 0.526 ms
+2025-05-17 08:03:41 - [sl-0] [SL] Key update message length for CH_join(ch-5): 1044 bytes
+2025-05-17 08:03:41 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 1044. Send duration: 0.113 ms
+2025-05-17 08:04:09 - [sl-0] Starting SL Node: sl-0
+2025-05-17 08:04:09 - [sl-0] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 08:04:09 - [sl-0] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 08:04:09 - [sl-0] Loaded DH params...
+2025-05-17 08:04:09 - [sl-0] Loading SL private key: /mnt/workarea/H-SBP/keys/sl_private.pem
+2025-05-17 08:04:09 - [sl-0] Starting node sl-0 as SL
+2025-05-17 08:04:09 - [sl-0] Initializing Swarm Leader...
+2025-05-17 08:04:09 - [sl-0] Initial SL state: Sequence=['sl-0'], K_main=795201121773694405337690656498...
+2025-05-17 08:04:09 - [sl-0] TCP Server listening on ('0.0.0.0', 5000) for CHs
+2025-05-17 08:04:09 - [sl-0] Broadcasting Inter-CH updates on ('172.16.0.255', 6000)
+2025-05-17 08:04:14 - [sl-0] Accepted potential CH connection from ('172.16.0.2', 36527)
+2025-05-17 08:04:14 - [sl-0] CH ch-1 connected from ('172.16.0.2', 36527) with T_ch: 82228973595636604862795676252409951402460251433721464449029986050056367244505
+2025-05-17 08:04:14 - [sl-0] Computed K_main: 287715916325242190831157597889...
+2025-05-17 08:04:14 - [sl-0] Stored g^I_prev for ch-1: 444983096245734772376210094858...
+2025-05-17 08:04:14 - [sl-0] [SL] Execution time for CH ch-1 join event calculation: 2.200 ms
+2025-05-17 08:04:14 - [sl-0] [SL] Key update message length for CH_join(ch-1): 360 bytes
+2025-05-17 08:04:14 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 360. Send duration: 0.060 ms
+2025-05-17 08:04:15 - [sl-0] Accepted potential CH connection from ('172.16.0.3', 34189)
+2025-05-17 08:04:15 - [sl-0] CH ch-2 connected from ('172.16.0.3', 34189) with T_ch: 78077038693504108745445187780631681307268116321421780494839572417813941100563
+2025-05-17 08:04:15 - [sl-0] Computed K_main: 754335331663833690151653842107...
+2025-05-17 08:04:15 - [sl-0] Stored g^I_prev for ch-2: 727506396102569863590295574566...
+2025-05-17 08:04:15 - [sl-0] [SL] Execution time for CH ch-2 join event calculation: 1.364 ms
+2025-05-17 08:04:15 - [sl-0] [SL] Key update message length for CH_join(ch-2): 531 bytes
+2025-05-17 08:04:15 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 531. Send duration: 0.113 ms
+2025-05-17 08:04:16 - [sl-0] Accepted potential CH connection from ('172.16.0.4', 32997)
+2025-05-17 08:04:16 - [sl-0] CH ch-3 connected from ('172.16.0.4', 32997) with T_ch: 48079473562778616762448461737932260462499401041869846037582490335664033339244
+2025-05-17 08:04:16 - [sl-0] Computed K_main: 238866565111897124440550780632...
+2025-05-17 08:04:16 - [sl-0] Stored g^I_prev for ch-3: 645730307975451714416887768917...
+2025-05-17 08:04:16 - [sl-0] [SL] Execution time for CH ch-3 join event calculation: 0.636 ms
+2025-05-17 08:04:16 - [sl-0] [SL] Key update message length for CH_join(ch-3): 702 bytes
+2025-05-17 08:04:16 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 702. Send duration: 0.134 ms
+2025-05-17 08:04:17 - [sl-0] Accepted potential CH connection from ('172.16.0.5', 40691)
+2025-05-17 08:04:17 - [sl-0] CH ch-4 connected from ('172.16.0.5', 40691) with T_ch: 38518195493181983548724934956043234284622563163478406988115654461367560022986
+2025-05-17 08:04:17 - [sl-0] Computed K_main: 690244911904857755257192609260...
+2025-05-17 08:04:17 - [sl-0] Stored g^I_prev for ch-4: 825576824443777881172718223083...
+2025-05-17 08:04:17 - [sl-0] [SL] Execution time for CH ch-4 join event calculation: 0.281 ms
+2025-05-17 08:04:17 - [sl-0] [SL] Key update message length for CH_join(ch-4): 873 bytes
+2025-05-17 08:04:17 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 873. Send duration: 0.054 ms
+2025-05-17 08:04:18 - [sl-0] Accepted potential CH connection from ('172.16.0.6', 42415)
+2025-05-17 08:04:18 - [sl-0] CH ch-5 connected from ('172.16.0.6', 42415) with T_ch: 75528872464384615961167455403025489218493954816263060973501317686239257259790
+2025-05-17 08:04:18 - [sl-0] Computed K_main: 233427930218056547033199517884...
+2025-05-17 08:04:18 - [sl-0] Stored g^I_prev for ch-5: 224377203109888538813630079270...
+2025-05-17 08:04:18 - [sl-0] [SL] Execution time for CH ch-5 join event calculation: 0.499 ms
+2025-05-17 08:04:18 - [sl-0] [SL] Key update message length for CH_join(ch-5): 1044 bytes
+2025-05-17 08:04:18 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 1044. Send duration: 0.103 ms
+2025-05-17 08:04:46 - [sl-0] Starting SL Node: sl-0
+2025-05-17 08:04:46 - [sl-0] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 08:04:46 - [sl-0] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 08:04:46 - [sl-0] Loaded DH params...
+2025-05-17 08:04:46 - [sl-0] Loading SL private key: /mnt/workarea/H-SBP/keys/sl_private.pem
+2025-05-17 08:04:46 - [sl-0] Starting node sl-0 as SL
+2025-05-17 08:04:46 - [sl-0] Initializing Swarm Leader...
+2025-05-17 08:04:46 - [sl-0] Initial SL state: Sequence=['sl-0'], K_main=795201121773694405337690656498...
+2025-05-17 08:04:46 - [sl-0] TCP Server listening on ('0.0.0.0', 5000) for CHs
+2025-05-17 08:04:46 - [sl-0] Broadcasting Inter-CH updates on ('172.16.0.255', 6000)
+2025-05-17 08:04:50 - [sl-0] Accepted potential CH connection from ('172.16.0.2', 41203)
+2025-05-17 08:04:50 - [sl-0] CH ch-1 connected from ('172.16.0.2', 41203) with T_ch: 82228973595636604862795676252409951402460251433721464449029986050056367244505
+2025-05-17 08:04:50 - [sl-0] Computed K_main: 287715916325242190831157597889...
+2025-05-17 08:04:50 - [sl-0] Stored g^I_prev for ch-1: 444983096245734772376210094858...
+2025-05-17 08:04:50 - [sl-0] [SL] Execution time for CH ch-1 join event calculation: 2.145 ms
+2025-05-17 08:04:50 - [sl-0] [SL] Key update message length for CH_join(ch-1): 360 bytes
+2025-05-17 08:04:50 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 360. Send duration: 0.068 ms
+2025-05-17 08:04:51 - [sl-0] Accepted potential CH connection from ('172.16.0.3', 33637)
+2025-05-17 08:04:51 - [sl-0] CH ch-2 connected from ('172.16.0.3', 33637) with T_ch: 78077038693504108745445187780631681307268116321421780494839572417813941100563
+2025-05-17 08:04:51 - [sl-0] Computed K_main: 754335331663833690151653842107...
+2025-05-17 08:04:51 - [sl-0] Stored g^I_prev for ch-2: 727506396102569863590295574566...
+2025-05-17 08:04:51 - [sl-0] [SL] Execution time for CH ch-2 join event calculation: 0.645 ms
+2025-05-17 08:04:51 - [sl-0] [SL] Key update message length for CH_join(ch-2): 531 bytes
+2025-05-17 08:04:51 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 531. Send duration: 0.076 ms
+2025-05-17 08:04:52 - [sl-0] Accepted potential CH connection from ('172.16.0.4', 45475)
+2025-05-17 08:04:52 - [sl-0] CH ch-3 connected from ('172.16.0.4', 45475) with T_ch: 48079473562778616762448461737932260462499401041869846037582490335664033339244
+2025-05-17 08:04:52 - [sl-0] Computed K_main: 238866565111897124440550780632...
+2025-05-17 08:04:52 - [sl-0] Stored g^I_prev for ch-3: 645730307975451714416887768917...
+2025-05-17 08:04:52 - [sl-0] [SL] Execution time for CH ch-3 join event calculation: 0.652 ms
+2025-05-17 08:04:52 - [sl-0] [SL] Key update message length for CH_join(ch-3): 702 bytes
+2025-05-17 08:04:52 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 702. Send duration: 0.115 ms
+2025-05-17 08:04:53 - [sl-0] Accepted potential CH connection from ('172.16.0.5', 42579)
+2025-05-17 08:04:53 - [sl-0] CH ch-4 connected from ('172.16.0.5', 42579) with T_ch: 38518195493181983548724934956043234284622563163478406988115654461367560022986
+2025-05-17 08:04:53 - [sl-0] Computed K_main: 690244911904857755257192609260...
+2025-05-17 08:04:53 - [sl-0] Stored g^I_prev for ch-4: 825576824443777881172718223083...
+2025-05-17 08:04:53 - [sl-0] [SL] Execution time for CH ch-4 join event calculation: 0.583 ms
+2025-05-17 08:04:53 - [sl-0] [SL] Key update message length for CH_join(ch-4): 873 bytes
+2025-05-17 08:04:53 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 873. Send duration: 0.084 ms
+2025-05-17 08:04:54 - [sl-0] Accepted potential CH connection from ('172.16.0.6', 40855)
+2025-05-17 08:04:54 - [sl-0] CH ch-5 connected from ('172.16.0.6', 40855) with T_ch: 75528872464384615961167455403025489218493954816263060973501317686239257259790
+2025-05-17 08:04:54 - [sl-0] Computed K_main: 233427930218056547033199517884...
+2025-05-17 08:04:54 - [sl-0] Stored g^I_prev for ch-5: 224377203109888538813630079270...
+2025-05-17 08:04:54 - [sl-0] [SL] Execution time for CH ch-5 join event calculation: 0.653 ms
+2025-05-17 08:04:54 - [sl-0] [SL] Key update message length for CH_join(ch-5): 1044 bytes
+2025-05-17 08:04:54 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 1044. Send duration: 0.119 ms
+2025-05-17 08:05:23 - [sl-0] Starting SL Node: sl-0
+2025-05-17 08:05:23 - [sl-0] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 08:05:23 - [sl-0] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 08:05:23 - [sl-0] Loaded DH params...
+2025-05-17 08:05:23 - [sl-0] Loading SL private key: /mnt/workarea/H-SBP/keys/sl_private.pem
+2025-05-17 08:05:23 - [sl-0] Starting node sl-0 as SL
+2025-05-17 08:05:23 - [sl-0] Initializing Swarm Leader...
+2025-05-17 08:05:23 - [sl-0] Initial SL state: Sequence=['sl-0'], K_main=795201121773694405337690656498...
+2025-05-17 08:05:23 - [sl-0] TCP Server listening on ('0.0.0.0', 5000) for CHs
+2025-05-17 08:05:23 - [sl-0] Broadcasting Inter-CH updates on ('172.16.0.255', 6000)
+2025-05-17 08:05:27 - [sl-0] Accepted potential CH connection from ('172.16.0.2', 45141)
+2025-05-17 08:05:27 - [sl-0] CH ch-1 connected from ('172.16.0.2', 45141) with T_ch: 82228973595636604862795676252409951402460251433721464449029986050056367244505
+2025-05-17 08:05:27 - [sl-0] Computed K_main: 287715916325242190831157597889...
+2025-05-17 08:05:27 - [sl-0] Stored g^I_prev for ch-1: 444983096245734772376210094858...
+2025-05-17 08:05:27 - [sl-0] [SL] Execution time for CH ch-1 join event calculation: 0.940 ms
+2025-05-17 08:05:27 - [sl-0] [SL] Key update message length for CH_join(ch-1): 360 bytes
+2025-05-17 08:05:27 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 360. Send duration: 0.052 ms
+2025-05-17 08:05:28 - [sl-0] Accepted potential CH connection from ('172.16.0.3', 35271)
+2025-05-17 08:05:28 - [sl-0] CH ch-2 connected from ('172.16.0.3', 35271) with T_ch: 78077038693504108745445187780631681307268116321421780494839572417813941100563
+2025-05-17 08:05:28 - [sl-0] Computed K_main: 754335331663833690151653842107...
+2025-05-17 08:05:28 - [sl-0] Stored g^I_prev for ch-2: 727506396102569863590295574566...
+2025-05-17 08:05:28 - [sl-0] [SL] Execution time for CH ch-2 join event calculation: 1.254 ms
+2025-05-17 08:05:28 - [sl-0] [SL] Key update message length for CH_join(ch-2): 531 bytes
+2025-05-17 08:05:28 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 531. Send duration: 0.118 ms
+2025-05-17 08:05:29 - [sl-0] Accepted potential CH connection from ('172.16.0.4', 41173)
+2025-05-17 08:05:29 - [sl-0] CH ch-3 connected from ('172.16.0.4', 41173) with T_ch: 48079473562778616762448461737932260462499401041869846037582490335664033339244
+2025-05-17 08:05:29 - [sl-0] Computed K_main: 238866565111897124440550780632...
+2025-05-17 08:05:29 - [sl-0] Stored g^I_prev for ch-3: 645730307975451714416887768917...
+2025-05-17 08:05:29 - [sl-0] [SL] Execution time for CH ch-3 join event calculation: 0.629 ms
+2025-05-17 08:05:29 - [sl-0] [SL] Key update message length for CH_join(ch-3): 702 bytes
+2025-05-17 08:05:29 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 702. Send duration: 0.142 ms
+2025-05-17 08:05:30 - [sl-0] Accepted potential CH connection from ('172.16.0.5', 39927)
+2025-05-17 08:05:30 - [sl-0] CH ch-4 connected from ('172.16.0.5', 39927) with T_ch: 38518195493181983548724934956043234284622563163478406988115654461367560022986
+2025-05-17 08:05:30 - [sl-0] Computed K_main: 690244911904857755257192609260...
+2025-05-17 08:05:30 - [sl-0] Stored g^I_prev for ch-4: 825576824443777881172718223083...
+2025-05-17 08:05:30 - [sl-0] [SL] Execution time for CH ch-4 join event calculation: 0.641 ms
+2025-05-17 08:05:30 - [sl-0] [SL] Key update message length for CH_join(ch-4): 873 bytes
+2025-05-17 08:05:30 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 873. Send duration: 0.127 ms
+2025-05-17 08:05:31 - [sl-0] Accepted potential CH connection from ('172.16.0.6', 41421)
+2025-05-17 08:05:31 - [sl-0] CH ch-5 connected from ('172.16.0.6', 41421) with T_ch: 75528872464384615961167455403025489218493954816263060973501317686239257259790
+2025-05-17 08:05:31 - [sl-0] Computed K_main: 233427930218056547033199517884...
+2025-05-17 08:05:31 - [sl-0] Stored g^I_prev for ch-5: 224377203109888538813630079270...
+2025-05-17 08:05:31 - [sl-0] [SL] Execution time for CH ch-5 join event calculation: 0.682 ms
+2025-05-17 08:05:31 - [sl-0] [SL] Key update message length for CH_join(ch-5): 1044 bytes
+2025-05-17 08:05:31 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 1044. Send duration: 0.125 ms
+2025-05-17 08:05:59 - [sl-0] Starting SL Node: sl-0
+2025-05-17 08:05:59 - [sl-0] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 08:05:59 - [sl-0] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 08:05:59 - [sl-0] Loaded DH params...
+2025-05-17 08:05:59 - [sl-0] Loading SL private key: /mnt/workarea/H-SBP/keys/sl_private.pem
+2025-05-17 08:05:59 - [sl-0] Starting node sl-0 as SL
+2025-05-17 08:05:59 - [sl-0] Initializing Swarm Leader...
+2025-05-17 08:05:59 - [sl-0] Initial SL state: Sequence=['sl-0'], K_main=795201121773694405337690656498...
+2025-05-17 08:05:59 - [sl-0] TCP Server listening on ('0.0.0.0', 5000) for CHs
+2025-05-17 08:05:59 - [sl-0] Broadcasting Inter-CH updates on ('172.16.0.255', 6000)
+2025-05-17 08:06:04 - [sl-0] Accepted potential CH connection from ('172.16.0.2', 33559)
+2025-05-17 08:06:04 - [sl-0] CH ch-1 connected from ('172.16.0.2', 33559) with T_ch: 82228973595636604862795676252409951402460251433721464449029986050056367244505
+2025-05-17 08:06:04 - [sl-0] Computed K_main: 287715916325242190831157597889...
+2025-05-17 08:06:04 - [sl-0] Stored g^I_prev for ch-1: 444983096245734772376210094858...
+2025-05-17 08:06:04 - [sl-0] [SL] Execution time for CH ch-1 join event calculation: 2.166 ms
+2025-05-17 08:06:04 - [sl-0] [SL] Key update message length for CH_join(ch-1): 360 bytes
+2025-05-17 08:06:04 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 360. Send duration: 0.084 ms
+2025-05-17 08:06:05 - [sl-0] Accepted potential CH connection from ('172.16.0.3', 34785)
+2025-05-17 08:06:05 - [sl-0] CH ch-2 connected from ('172.16.0.3', 34785) with T_ch: 78077038693504108745445187780631681307268116321421780494839572417813941100563
+2025-05-17 08:06:05 - [sl-0] Computed K_main: 754335331663833690151653842107...
+2025-05-17 08:06:05 - [sl-0] Stored g^I_prev for ch-2: 727506396102569863590295574566...
+2025-05-17 08:06:05 - [sl-0] [SL] Execution time for CH ch-2 join event calculation: 0.533 ms
+2025-05-17 08:06:05 - [sl-0] [SL] Key update message length for CH_join(ch-2): 531 bytes
+2025-05-17 08:06:05 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 531. Send duration: 0.055 ms
+2025-05-17 08:06:06 - [sl-0] Accepted potential CH connection from ('172.16.0.4', 34049)
+2025-05-17 08:06:06 - [sl-0] CH ch-3 connected from ('172.16.0.4', 34049) with T_ch: 48079473562778616762448461737932260462499401041869846037582490335664033339244
+2025-05-17 08:06:06 - [sl-0] Computed K_main: 238866565111897124440550780632...
+2025-05-17 08:06:06 - [sl-0] Stored g^I_prev for ch-3: 645730307975451714416887768917...
+2025-05-17 08:06:06 - [sl-0] [SL] Execution time for CH ch-3 join event calculation: 0.578 ms
+2025-05-17 08:06:06 - [sl-0] [SL] Key update message length for CH_join(ch-3): 702 bytes
+2025-05-17 08:06:06 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 702. Send duration: 0.066 ms
+2025-05-17 08:06:07 - [sl-0] Accepted potential CH connection from ('172.16.0.5', 34229)
+2025-05-17 08:06:07 - [sl-0] CH ch-4 connected from ('172.16.0.5', 34229) with T_ch: 38518195493181983548724934956043234284622563163478406988115654461367560022986
+2025-05-17 08:06:07 - [sl-0] Computed K_main: 690244911904857755257192609260...
+2025-05-17 08:06:07 - [sl-0] Stored g^I_prev for ch-4: 825576824443777881172718223083...
+2025-05-17 08:06:07 - [sl-0] [SL] Execution time for CH ch-4 join event calculation: 0.273 ms
+2025-05-17 08:06:07 - [sl-0] [SL] Key update message length for CH_join(ch-4): 873 bytes
+2025-05-17 08:06:07 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 873. Send duration: 0.065 ms
+2025-05-17 08:06:08 - [sl-0] Accepted potential CH connection from ('172.16.0.6', 41965)
+2025-05-17 08:06:08 - [sl-0] CH ch-5 connected from ('172.16.0.6', 41965) with T_ch: 75528872464384615961167455403025489218493954816263060973501317686239257259790
+2025-05-17 08:06:08 - [sl-0] Computed K_main: 233427930218056547033199517884...
+2025-05-17 08:06:08 - [sl-0] Stored g^I_prev for ch-5: 224377203109888538813630079270...
+2025-05-17 08:06:08 - [sl-0] [SL] Execution time for CH ch-5 join event calculation: 0.649 ms
+2025-05-17 08:06:08 - [sl-0] [SL] Key update message length for CH_join(ch-5): 1044 bytes
+2025-05-17 08:06:08 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 1044. Send duration: 0.124 ms
+2025-05-17 08:06:36 - [sl-0] Starting SL Node: sl-0
+2025-05-17 08:06:36 - [sl-0] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 08:06:36 - [sl-0] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 08:06:36 - [sl-0] Loaded DH params...
+2025-05-17 08:06:36 - [sl-0] Loading SL private key: /mnt/workarea/H-SBP/keys/sl_private.pem
+2025-05-17 08:06:36 - [sl-0] Starting node sl-0 as SL
+2025-05-17 08:06:36 - [sl-0] Initializing Swarm Leader...
+2025-05-17 08:06:36 - [sl-0] Initial SL state: Sequence=['sl-0'], K_main=795201121773694405337690656498...
+2025-05-17 08:06:36 - [sl-0] TCP Server listening on ('0.0.0.0', 5000) for CHs
+2025-05-17 08:06:36 - [sl-0] Broadcasting Inter-CH updates on ('172.16.0.255', 6000)
+2025-05-17 08:06:40 - [sl-0] Accepted potential CH connection from ('172.16.0.2', 35223)
+2025-05-17 08:06:40 - [sl-0] CH ch-1 connected from ('172.16.0.2', 35223) with T_ch: 82228973595636604862795676252409951402460251433721464449029986050056367244505
+2025-05-17 08:06:40 - [sl-0] Computed K_main: 287715916325242190831157597889...
+2025-05-17 08:06:40 - [sl-0] Stored g^I_prev for ch-1: 444983096245734772376210094858...
+2025-05-17 08:06:40 - [sl-0] [SL] Execution time for CH ch-1 join event calculation: 2.008 ms
+2025-05-17 08:06:40 - [sl-0] [SL] Key update message length for CH_join(ch-1): 360 bytes
+2025-05-17 08:06:40 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 360. Send duration: 0.129 ms
+2025-05-17 08:06:41 - [sl-0] Accepted potential CH connection from ('172.16.0.3', 37647)
+2025-05-17 08:06:41 - [sl-0] CH ch-2 connected from ('172.16.0.3', 37647) with T_ch: 78077038693504108745445187780631681307268116321421780494839572417813941100563
+2025-05-17 08:06:41 - [sl-0] Computed K_main: 754335331663833690151653842107...
+2025-05-17 08:06:41 - [sl-0] Stored g^I_prev for ch-2: 727506396102569863590295574566...
+2025-05-17 08:06:41 - [sl-0] [SL] Execution time for CH ch-2 join event calculation: 0.542 ms
+2025-05-17 08:06:41 - [sl-0] [SL] Key update message length for CH_join(ch-2): 531 bytes
+2025-05-17 08:06:41 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 531. Send duration: 0.049 ms
+2025-05-17 08:06:42 - [sl-0] Accepted potential CH connection from ('172.16.0.4', 40907)
+2025-05-17 08:06:42 - [sl-0] CH ch-3 connected from ('172.16.0.4', 40907) with T_ch: 48079473562778616762448461737932260462499401041869846037582490335664033339244
+2025-05-17 08:06:42 - [sl-0] Computed K_main: 238866565111897124440550780632...
+2025-05-17 08:06:42 - [sl-0] Stored g^I_prev for ch-3: 645730307975451714416887768917...
+2025-05-17 08:06:42 - [sl-0] [SL] Execution time for CH ch-3 join event calculation: 0.614 ms
+2025-05-17 08:06:42 - [sl-0] [SL] Key update message length for CH_join(ch-3): 702 bytes
+2025-05-17 08:06:42 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 702. Send duration: 0.124 ms
+2025-05-17 08:06:43 - [sl-0] Accepted potential CH connection from ('172.16.0.5', 44931)
+2025-05-17 08:06:43 - [sl-0] CH ch-4 connected from ('172.16.0.5', 44931) with T_ch: 38518195493181983548724934956043234284622563163478406988115654461367560022986
+2025-05-17 08:06:43 - [sl-0] Computed K_main: 690244911904857755257192609260...
+2025-05-17 08:06:43 - [sl-0] Stored g^I_prev for ch-4: 825576824443777881172718223083...
+2025-05-17 08:06:43 - [sl-0] [SL] Execution time for CH ch-4 join event calculation: 0.598 ms
+2025-05-17 08:06:43 - [sl-0] [SL] Key update message length for CH_join(ch-4): 873 bytes
+2025-05-17 08:06:43 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 873. Send duration: 0.121 ms
+2025-05-17 08:06:44 - [sl-0] Accepted potential CH connection from ('172.16.0.6', 39999)
+2025-05-17 08:06:44 - [sl-0] CH ch-5 connected from ('172.16.0.6', 39999) with T_ch: 75528872464384615961167455403025489218493954816263060973501317686239257259790
+2025-05-17 08:06:44 - [sl-0] Computed K_main: 233427930218056547033199517884...
+2025-05-17 08:06:44 - [sl-0] Stored g^I_prev for ch-5: 224377203109888538813630079270...
+2025-05-17 08:06:44 - [sl-0] [SL] Execution time for CH ch-5 join event calculation: 0.351 ms
+2025-05-17 08:06:44 - [sl-0] [SL] Key update message length for CH_join(ch-5): 1044 bytes
+2025-05-17 08:06:44 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 1044. Send duration: 0.073 ms
+2025-05-17 08:07:12 - [sl-0] Starting SL Node: sl-0
+2025-05-17 08:07:12 - [sl-0] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 08:07:12 - [sl-0] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 08:07:12 - [sl-0] Loaded DH params...
+2025-05-17 08:07:12 - [sl-0] Loading SL private key: /mnt/workarea/H-SBP/keys/sl_private.pem
+2025-05-17 08:07:12 - [sl-0] Starting node sl-0 as SL
+2025-05-17 08:07:12 - [sl-0] Initializing Swarm Leader...
+2025-05-17 08:07:12 - [sl-0] Initial SL state: Sequence=['sl-0'], K_main=795201121773694405337690656498...
+2025-05-17 08:07:12 - [sl-0] TCP Server listening on ('0.0.0.0', 5000) for CHs
+2025-05-17 08:07:12 - [sl-0] Broadcasting Inter-CH updates on ('172.16.0.255', 6000)
+2025-05-17 08:07:17 - [sl-0] Accepted potential CH connection from ('172.16.0.2', 38021)
+2025-05-17 08:07:17 - [sl-0] CH ch-1 connected from ('172.16.0.2', 38021) with T_ch: 82228973595636604862795676252409951402460251433721464449029986050056367244505
+2025-05-17 08:07:17 - [sl-0] Computed K_main: 287715916325242190831157597889...
+2025-05-17 08:07:17 - [sl-0] Stored g^I_prev for ch-1: 444983096245734772376210094858...
+2025-05-17 08:07:17 - [sl-0] [SL] Execution time for CH ch-1 join event calculation: 2.126 ms
+2025-05-17 08:07:17 - [sl-0] [SL] Key update message length for CH_join(ch-1): 360 bytes
+2025-05-17 08:07:17 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 360. Send duration: 0.065 ms
+2025-05-17 08:07:18 - [sl-0] Accepted potential CH connection from ('172.16.0.3', 35511)
+2025-05-17 08:07:18 - [sl-0] CH ch-2 connected from ('172.16.0.3', 35511) with T_ch: 78077038693504108745445187780631681307268116321421780494839572417813941100563
+2025-05-17 08:07:18 - [sl-0] Computed K_main: 754335331663833690151653842107...
+2025-05-17 08:07:18 - [sl-0] Stored g^I_prev for ch-2: 727506396102569863590295574566...
+2025-05-17 08:07:18 - [sl-0] [SL] Execution time for CH ch-2 join event calculation: 1.258 ms
+2025-05-17 08:07:18 - [sl-0] [SL] Key update message length for CH_join(ch-2): 531 bytes
+2025-05-17 08:07:18 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 531. Send duration: 0.119 ms
+2025-05-17 08:07:19 - [sl-0] Accepted potential CH connection from ('172.16.0.4', 45129)
+2025-05-17 08:07:19 - [sl-0] CH ch-3 connected from ('172.16.0.4', 45129) with T_ch: 48079473562778616762448461737932260462499401041869846037582490335664033339244
+2025-05-17 08:07:19 - [sl-0] Computed K_main: 238866565111897124440550780632...
+2025-05-17 08:07:19 - [sl-0] Stored g^I_prev for ch-3: 645730307975451714416887768917...
+2025-05-17 08:07:19 - [sl-0] [SL] Execution time for CH ch-3 join event calculation: 0.338 ms
+2025-05-17 08:07:19 - [sl-0] [SL] Key update message length for CH_join(ch-3): 702 bytes
+2025-05-17 08:07:19 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 702. Send duration: 0.066 ms
+2025-05-17 08:07:20 - [sl-0] Accepted potential CH connection from ('172.16.0.5', 43575)
+2025-05-17 08:07:20 - [sl-0] CH ch-4 connected from ('172.16.0.5', 43575) with T_ch: 38518195493181983548724934956043234284622563163478406988115654461367560022986
+2025-05-17 08:07:20 - [sl-0] Computed K_main: 690244911904857755257192609260...
+2025-05-17 08:07:20 - [sl-0] Stored g^I_prev for ch-4: 825576824443777881172718223083...
+2025-05-17 08:07:20 - [sl-0] [SL] Execution time for CH ch-4 join event calculation: 0.626 ms
+2025-05-17 08:07:20 - [sl-0] [SL] Key update message length for CH_join(ch-4): 873 bytes
+2025-05-17 08:07:20 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 873. Send duration: 0.122 ms
+2025-05-17 08:07:21 - [sl-0] Accepted potential CH connection from ('172.16.0.6', 35803)
+2025-05-17 08:07:21 - [sl-0] CH ch-5 connected from ('172.16.0.6', 35803) with T_ch: 75528872464384615961167455403025489218493954816263060973501317686239257259790
+2025-05-17 08:07:21 - [sl-0] Computed K_main: 233427930218056547033199517884...
+2025-05-17 08:07:21 - [sl-0] Stored g^I_prev for ch-5: 224377203109888538813630079270...
+2025-05-17 08:07:21 - [sl-0] [SL] Execution time for CH ch-5 join event calculation: 0.645 ms
+2025-05-17 08:07:21 - [sl-0] [SL] Key update message length for CH_join(ch-5): 1044 bytes
+2025-05-17 08:07:21 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 1044. Send duration: 0.145 ms
+2025-05-17 08:07:49 - [sl-0] Starting SL Node: sl-0
+2025-05-17 08:07:49 - [sl-0] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 08:07:49 - [sl-0] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 08:07:49 - [sl-0] Loaded DH params...
+2025-05-17 08:07:49 - [sl-0] Loading SL private key: /mnt/workarea/H-SBP/keys/sl_private.pem
+2025-05-17 08:07:49 - [sl-0] Starting node sl-0 as SL
+2025-05-17 08:07:49 - [sl-0] Initializing Swarm Leader...
+2025-05-17 08:07:49 - [sl-0] Initial SL state: Sequence=['sl-0'], K_main=795201121773694405337690656498...
+2025-05-17 08:07:49 - [sl-0] TCP Server listening on ('0.0.0.0', 5000) for CHs
+2025-05-17 08:07:49 - [sl-0] Broadcasting Inter-CH updates on ('172.16.0.255', 6000)
+2025-05-17 08:07:54 - [sl-0] Accepted potential CH connection from ('172.16.0.2', 44463)
+2025-05-17 08:07:54 - [sl-0] CH ch-1 connected from ('172.16.0.2', 44463) with T_ch: 82228973595636604862795676252409951402460251433721464449029986050056367244505
+2025-05-17 08:07:54 - [sl-0] Computed K_main: 287715916325242190831157597889...
+2025-05-17 08:07:54 - [sl-0] Stored g^I_prev for ch-1: 444983096245734772376210094858...
+2025-05-17 08:07:54 - [sl-0] [SL] Execution time for CH ch-1 join event calculation: 1.893 ms
+2025-05-17 08:07:54 - [sl-0] [SL] Key update message length for CH_join(ch-1): 360 bytes
+2025-05-17 08:07:54 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 360. Send duration: 0.108 ms
+2025-05-17 08:07:55 - [sl-0] Accepted potential CH connection from ('172.16.0.3', 38019)
+2025-05-17 08:07:55 - [sl-0] CH ch-2 connected from ('172.16.0.3', 38019) with T_ch: 78077038693504108745445187780631681307268116321421780494839572417813941100563
+2025-05-17 08:07:55 - [sl-0] Computed K_main: 754335331663833690151653842107...
+2025-05-17 08:07:55 - [sl-0] Stored g^I_prev for ch-2: 727506396102569863590295574566...
+2025-05-17 08:07:55 - [sl-0] [SL] Execution time for CH ch-2 join event calculation: 1.180 ms
+2025-05-17 08:07:55 - [sl-0] [SL] Key update message length for CH_join(ch-2): 531 bytes
+2025-05-17 08:07:55 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 531. Send duration: 0.110 ms
+2025-05-17 08:07:56 - [sl-0] Accepted potential CH connection from ('172.16.0.4', 46199)
+2025-05-17 08:07:56 - [sl-0] CH ch-3 connected from ('172.16.0.4', 46199) with T_ch: 48079473562778616762448461737932260462499401041869846037582490335664033339244
+2025-05-17 08:07:56 - [sl-0] Computed K_main: 238866565111897124440550780632...
+2025-05-17 08:07:56 - [sl-0] Stored g^I_prev for ch-3: 645730307975451714416887768917...
+2025-05-17 08:07:56 - [sl-0] [SL] Execution time for CH ch-3 join event calculation: 0.639 ms
+2025-05-17 08:07:56 - [sl-0] [SL] Key update message length for CH_join(ch-3): 702 bytes
+2025-05-17 08:07:56 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 702. Send duration: 0.125 ms
+2025-05-17 08:07:57 - [sl-0] Accepted potential CH connection from ('172.16.0.5', 35451)
+2025-05-17 08:07:57 - [sl-0] CH ch-4 connected from ('172.16.0.5', 35451) with T_ch: 38518195493181983548724934956043234284622563163478406988115654461367560022986
+2025-05-17 08:07:57 - [sl-0] Computed K_main: 690244911904857755257192609260...
+2025-05-17 08:07:57 - [sl-0] Stored g^I_prev for ch-4: 825576824443777881172718223083...
+2025-05-17 08:07:57 - [sl-0] [SL] Execution time for CH ch-4 join event calculation: 0.710 ms
+2025-05-17 08:07:57 - [sl-0] [SL] Key update message length for CH_join(ch-4): 873 bytes
+2025-05-17 08:07:57 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 873. Send duration: 0.133 ms
+2025-05-17 08:07:58 - [sl-0] Accepted potential CH connection from ('172.16.0.6', 36381)
+2025-05-17 08:07:58 - [sl-0] CH ch-5 connected from ('172.16.0.6', 36381) with T_ch: 75528872464384615961167455403025489218493954816263060973501317686239257259790
+2025-05-17 08:07:58 - [sl-0] Computed K_main: 233427930218056547033199517884...
+2025-05-17 08:07:58 - [sl-0] Stored g^I_prev for ch-5: 224377203109888538813630079270...
+2025-05-17 08:07:58 - [sl-0] [SL] Execution time for CH ch-5 join event calculation: 0.319 ms
+2025-05-17 08:07:58 - [sl-0] [SL] Key update message length for CH_join(ch-5): 1044 bytes
+2025-05-17 08:07:58 - [sl-0] Broadcasting non-fragmented Inter-CH update (join). Size: 1044. Send duration: 0.089 ms

@@ -1,112 +1,280 @@
-2025-05-14 05:12:13 - [m-10201] Starting Member Node: m-10201
-2025-05-14 05:12:13 - [m-10201] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
-2025-05-14 05:12:13 - [m-10201] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
-2025-05-14 05:12:13 - [m-10201] Loaded DH params...
-2025-05-14 05:12:13 - [m-10201] Loading CH public key: /mnt/workarea/H-SBP/keys/ch1_public.pem
-2025-05-14 05:12:13 - [m-10201] Starting node m-10201 as MEMBER in Cluster 1
-2025-05-14 05:12:13 - [m-10201] My CH is ch-1. Target CH Address: ('172.16.0.2', 5001)
-2025-05-14 05:12:13 - [m-10201] Listening for cluster broadcasts on UDP ('172.16.0.255', 6001)
-2025-05-14 05:12:13 - [m-10201] Successfully bound UDP listener to ('172.16.0.255', 6001)
-2025-05-14 05:12:13 - [m-10201] Attempt 1: Connecting to CH ch-1 at ('172.16.0.2', 5001)
-2025-05-14 05:12:13 - [m-10201] Connected to CH via TCP.
-2025-05-14 05:12:13 - [m-10201] Sending ID: ID:m-10201
-2025-05-14 05:12:13 - [m-10201] Sending T_i: T_I:15188017957089488811817536054486332443306307095825478030351367428026985605701
-2025-05-14 05:12:13 - [m-10201] ID and T_i sent.
-2025-05-14 05:12:13 - [m-10201] Listening on UDP ('172.16.0.255', 6001) for cluster messages...
-2025-05-14 05:12:13 - [m-10201] Processing KEY_UPDATE from CH...
-2025-05-14 05:12:13 - [m-10201] Detected minimal join update format.
-2025-05-14 05:12:13 - [m-10201] Computing cluster key as the JOINING member...
-2025-05-14 05:12:13 - [m-10201] Computed initial K_cluster as JOINER: 754750999838769413701245806307... (took 0.180 ms)
-2025-05-14 05:12:13 - [m-10201] [MEMBER] Execution time for joining key computation: 0.180 ms
-2025-05-14 05:12:15 - [m-10201] Received all 14 fragments for message 1747199535.650162. Reassembling...
-2025-05-14 05:12:15 - [m-10201] Reassembly successful for 1747199535.650162. Processing.
-2025-05-14 05:12:15 - [m-10201] Processing KEY_UPDATE from CH...
-2025-05-14 05:12:15 - [m-10201] Processing full state update format.
-2025-05-14 05:12:15 - [m-10201] Received Cluster State: Seq=['ch-1', 'm-10001', 'm-10002', 'm-10003', 'm-10004', 'm-10005', 'm-10006', 'm-10007', 'm-10008', 'm-10009', 'm-10010', 'm-10011', 'm-10012', 'm-10013', 'm-10014', 'm-10015', 'm-10016', 'm-10017', 'm-10018', 'm-10019', 'm-10020', 'm-10021', 'm-10022', 'm-10023', 'm-10024', 'm-10025', 'm-10026', 'm-10027', 'm-10028', 'm-10029', 'm-10030', 'm-10031', 'm-10032', 'm-10033', 'm-10034', 'm-10035', 'm-10036', 'm-10037', 'm-10038', 'm-10039', 'm-10040', 'm-10041', 'm-10042', 'm-10043', 'm-10044', 'm-10045', 'm-10046', 'm-10047', 'm-10048', 'm-10049', 'm-10050', 'm-10051', 'm-10052', 'm-10053', 'm-10054', 'm-10055', 'm-10056', 'm-10057', 'm-10058', 'm-10059', 'm-10060', 'm-10061', 'm-10062', 'm-10063', 'm-10064', 'm-10065', 'm-10066', 'm-10067', 'm-10068', 'm-10069', 'm-10070', 'm-10071', 'm-10072', 'm-10073', 'm-10074', 'm-10075', 'm-10076', 'm-10077', 'm-10078', 'm-10079', 'm-10080', 'm-10081', 'm-10082', 'm-10083', 'm-10084', 'm-10085', 'm-10086', 'm-10087', 'm-10088', 'm-10089', 'm-10090', 'm-10091', 'm-10092', 'm-10093', 'm-10094', 'm-10095', 'm-10096', 'm-10097', 'm-10098', 'm-10099', 'm-10100', 'm-10201']
-2025-05-14 05:12:15 - [m-10201] Attempting to compute cluster key from full state...
-2025-05-14 05:12:15 - [m-10201] Computed new cluster key K_cluster (from full state): 300485277094077108487497374587... (took 0.413 ms)
-2025-05-14 05:12:15 - [m-10201] [MEMBER] Execution time for key computation (full state): 0.413 ms
-2025-05-14 05:12:49 - [m-10201] Starting Member Node: m-10201
-2025-05-14 05:12:49 - [m-10201] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
-2025-05-14 05:12:49 - [m-10201] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
-2025-05-14 05:12:49 - [m-10201] Loaded DH params...
-2025-05-14 05:12:49 - [m-10201] Loading CH public key: /mnt/workarea/H-SBP/keys/ch1_public.pem
-2025-05-14 05:12:49 - [m-10201] Starting node m-10201 as MEMBER in Cluster 1
-2025-05-14 05:12:49 - [m-10201] My CH is ch-1. Target CH Address: ('172.16.0.2', 5001)
-2025-05-14 05:12:49 - [m-10201] Listening for cluster broadcasts on UDP ('172.16.0.255', 6001)
-2025-05-14 05:12:49 - [m-10201] Successfully bound UDP listener to ('172.16.0.255', 6001)
-2025-05-14 05:12:49 - [m-10201] Attempt 1: Connecting to CH ch-1 at ('172.16.0.2', 5001)
-2025-05-14 05:12:49 - [m-10201] Connected to CH via TCP.
-2025-05-14 05:12:49 - [m-10201] Sending ID: ID:m-10201
-2025-05-14 05:12:49 - [m-10201] Sending T_i: T_I:15188017957089488811817536054486332443306307095825478030351367428026985605701
-2025-05-14 05:12:49 - [m-10201] ID and T_i sent.
-2025-05-14 05:12:49 - [m-10201] Listening on UDP ('172.16.0.255', 6001) for cluster messages...
-2025-05-14 05:12:49 - [m-10201] Processing KEY_UPDATE from CH...
-2025-05-14 05:12:49 - [m-10201] Detected minimal join update format.
-2025-05-14 05:12:49 - [m-10201] Computing cluster key as the JOINING member...
-2025-05-14 05:12:49 - [m-10201] Computed initial K_cluster as JOINER: 754750999838769413701245806307... (took 0.498 ms)
-2025-05-14 05:12:49 - [m-10201] [MEMBER] Execution time for joining key computation: 0.498 ms
-2025-05-14 05:12:51 - [m-10201] Received all 14 fragments for message 1747199571.796747. Reassembling...
-2025-05-14 05:12:51 - [m-10201] Reassembly successful for 1747199571.796747. Processing.
-2025-05-14 05:12:51 - [m-10201] Processing KEY_UPDATE from CH...
-2025-05-14 05:12:51 - [m-10201] Processing full state update format.
-2025-05-14 05:12:51 - [m-10201] Received Cluster State: Seq=['ch-1', 'm-10001', 'm-10002', 'm-10003', 'm-10004', 'm-10005', 'm-10006', 'm-10007', 'm-10008', 'm-10009', 'm-10010', 'm-10011', 'm-10012', 'm-10013', 'm-10014', 'm-10015', 'm-10016', 'm-10017', 'm-10018', 'm-10019', 'm-10020', 'm-10021', 'm-10022', 'm-10023', 'm-10024', 'm-10025', 'm-10026', 'm-10027', 'm-10028', 'm-10029', 'm-10030', 'm-10031', 'm-10032', 'm-10033', 'm-10034', 'm-10035', 'm-10036', 'm-10037', 'm-10038', 'm-10039', 'm-10040', 'm-10041', 'm-10042', 'm-10043', 'm-10044', 'm-10045', 'm-10046', 'm-10047', 'm-10048', 'm-10049', 'm-10050', 'm-10051', 'm-10052', 'm-10053', 'm-10054', 'm-10055', 'm-10056', 'm-10057', 'm-10058', 'm-10059', 'm-10060', 'm-10061', 'm-10062', 'm-10063', 'm-10064', 'm-10065', 'm-10066', 'm-10067', 'm-10068', 'm-10069', 'm-10070', 'm-10071', 'm-10072', 'm-10073', 'm-10074', 'm-10075', 'm-10076', 'm-10077', 'm-10078', 'm-10079', 'm-10080', 'm-10081', 'm-10082', 'm-10083', 'm-10084', 'm-10085', 'm-10086', 'm-10087', 'm-10088', 'm-10089', 'm-10090', 'm-10091', 'm-10092', 'm-10093', 'm-10094', 'm-10095', 'm-10096', 'm-10097', 'm-10098', 'm-10099', 'm-10100', 'm-10201']
-2025-05-14 05:12:51 - [m-10201] Attempting to compute cluster key from full state...
-2025-05-14 05:12:51 - [m-10201] Computed new cluster key K_cluster (from full state): 300485277094077108487497374587... (took 0.432 ms)
-2025-05-14 05:12:51 - [m-10201] [MEMBER] Execution time for key computation (full state): 0.432 ms
-2025-05-14 05:13:26 - [m-10201] Starting Member Node: m-10201
-2025-05-14 05:13:26 - [m-10201] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
-2025-05-14 05:13:26 - [m-10201] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
-2025-05-14 05:13:26 - [m-10201] Loaded DH params...
-2025-05-14 05:13:26 - [m-10201] Loading CH public key: /mnt/workarea/H-SBP/keys/ch1_public.pem
-2025-05-14 05:13:26 - [m-10201] Starting node m-10201 as MEMBER in Cluster 1
-2025-05-14 05:13:26 - [m-10201] My CH is ch-1. Target CH Address: ('172.16.0.2', 5001)
-2025-05-14 05:13:26 - [m-10201] Listening for cluster broadcasts on UDP ('172.16.0.255', 6001)
-2025-05-14 05:13:26 - [m-10201] Successfully bound UDP listener to ('172.16.0.255', 6001)
-2025-05-14 05:13:26 - [m-10201] Attempt 1: Connecting to CH ch-1 at ('172.16.0.2', 5001)
-2025-05-14 05:13:26 - [m-10201] Connected to CH via TCP.
-2025-05-14 05:13:26 - [m-10201] Sending ID: ID:m-10201
-2025-05-14 05:13:26 - [m-10201] Sending T_i: T_I:15188017957089488811817536054486332443306307095825478030351367428026985605701
-2025-05-14 05:13:26 - [m-10201] ID and T_i sent.
-2025-05-14 05:13:26 - [m-10201] Listening on UDP ('172.16.0.255', 6001) for cluster messages...
-2025-05-14 05:13:26 - [m-10201] Processing KEY_UPDATE from CH...
-2025-05-14 05:13:26 - [m-10201] Detected minimal join update format.
-2025-05-14 05:13:26 - [m-10201] Computing cluster key as the JOINING member...
-2025-05-14 05:13:26 - [m-10201] Computed initial K_cluster as JOINER: 754750999838769413701245806307... (took 0.449 ms)
-2025-05-14 05:13:26 - [m-10201] [MEMBER] Execution time for joining key computation: 0.449 ms
-2025-05-14 05:13:28 - [m-10201] Received all 14 fragments for message 1747199608.046190. Reassembling...
-2025-05-14 05:13:28 - [m-10201] Reassembly successful for 1747199608.046190. Processing.
-2025-05-14 05:13:28 - [m-10201] Processing KEY_UPDATE from CH...
-2025-05-14 05:13:28 - [m-10201] Processing full state update format.
-2025-05-14 05:13:28 - [m-10201] Received Cluster State: Seq=['ch-1', 'm-10001', 'm-10002', 'm-10003', 'm-10004', 'm-10005', 'm-10006', 'm-10007', 'm-10008', 'm-10009', 'm-10010', 'm-10011', 'm-10012', 'm-10013', 'm-10014', 'm-10015', 'm-10016', 'm-10017', 'm-10018', 'm-10019', 'm-10020', 'm-10021', 'm-10022', 'm-10023', 'm-10024', 'm-10025', 'm-10026', 'm-10027', 'm-10028', 'm-10029', 'm-10030', 'm-10031', 'm-10032', 'm-10033', 'm-10034', 'm-10035', 'm-10036', 'm-10037', 'm-10038', 'm-10039', 'm-10040', 'm-10041', 'm-10042', 'm-10043', 'm-10044', 'm-10045', 'm-10046', 'm-10047', 'm-10048', 'm-10049', 'm-10050', 'm-10051', 'm-10052', 'm-10053', 'm-10054', 'm-10055', 'm-10056', 'm-10057', 'm-10058', 'm-10059', 'm-10060', 'm-10061', 'm-10062', 'm-10063', 'm-10064', 'm-10065', 'm-10066', 'm-10067', 'm-10068', 'm-10069', 'm-10070', 'm-10071', 'm-10072', 'm-10073', 'm-10074', 'm-10075', 'm-10076', 'm-10077', 'm-10078', 'm-10079', 'm-10080', 'm-10081', 'm-10082', 'm-10083', 'm-10084', 'm-10085', 'm-10086', 'm-10087', 'm-10088', 'm-10089', 'm-10090', 'm-10091', 'm-10092', 'm-10093', 'm-10094', 'm-10095', 'm-10096', 'm-10097', 'm-10098', 'm-10099', 'm-10100', 'm-10201']
-2025-05-14 05:13:28 - [m-10201] Attempting to compute cluster key from full state...
-2025-05-14 05:13:28 - [m-10201] Computed new cluster key K_cluster (from full state): 300485277094077108487497374587... (took 0.383 ms)
-2025-05-14 05:13:28 - [m-10201] [MEMBER] Execution time for key computation (full state): 0.383 ms
-2025-05-14 05:14:02 - [m-10201] Starting Member Node: m-10201
-2025-05-14 05:14:02 - [m-10201] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
-2025-05-14 05:14:02 - [m-10201] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
-2025-05-14 05:14:02 - [m-10201] Loaded DH params...
-2025-05-14 05:14:02 - [m-10201] Loading CH public key: /mnt/workarea/H-SBP/keys/ch1_public.pem
-2025-05-14 05:14:02 - [m-10201] Starting node m-10201 as MEMBER in Cluster 1
-2025-05-14 05:14:02 - [m-10201] My CH is ch-1. Target CH Address: ('172.16.0.2', 5001)
-2025-05-14 05:14:02 - [m-10201] Listening for cluster broadcasts on UDP ('172.16.0.255', 6001)
-2025-05-14 05:14:02 - [m-10201] Successfully bound UDP listener to ('172.16.0.255', 6001)
-2025-05-14 05:14:02 - [m-10201] Attempt 1: Connecting to CH ch-1 at ('172.16.0.2', 5001)
-2025-05-14 05:14:02 - [m-10201] Connected to CH via TCP.
-2025-05-14 05:14:02 - [m-10201] Sending ID: ID:m-10201
-2025-05-14 05:14:02 - [m-10201] Sending T_i: T_I:15188017957089488811817536054486332443306307095825478030351367428026985605701
-2025-05-14 05:14:02 - [m-10201] ID and T_i sent.
-2025-05-14 05:14:02 - [m-10201] Listening on UDP ('172.16.0.255', 6001) for cluster messages...
-2025-05-14 05:14:02 - [m-10201] Processing KEY_UPDATE from CH...
-2025-05-14 05:14:02 - [m-10201] Detected minimal join update format.
-2025-05-14 05:14:02 - [m-10201] Computing cluster key as the JOINING member...
-2025-05-14 05:14:02 - [m-10201] Computed initial K_cluster as JOINER: 754750999838769413701245806307... (took 0.210 ms)
-2025-05-14 05:14:02 - [m-10201] [MEMBER] Execution time for joining key computation: 0.210 ms
-2025-05-14 05:14:04 - [m-10201] Received all 14 fragments for message 1747199644.308007. Reassembling...
-2025-05-14 05:14:04 - [m-10201] Reassembly successful for 1747199644.308007. Processing.
-2025-05-14 05:14:04 - [m-10201] Processing KEY_UPDATE from CH...
-2025-05-14 05:14:04 - [m-10201] Processing full state update format.
-2025-05-14 05:14:04 - [m-10201] Received Cluster State: Seq=['ch-1', 'm-10001', 'm-10002', 'm-10003', 'm-10004', 'm-10005', 'm-10006', 'm-10007', 'm-10008', 'm-10009', 'm-10010', 'm-10011', 'm-10012', 'm-10013', 'm-10014', 'm-10015', 'm-10016', 'm-10017', 'm-10018', 'm-10019', 'm-10020', 'm-10021', 'm-10022', 'm-10023', 'm-10024', 'm-10025', 'm-10026', 'm-10027', 'm-10028', 'm-10029', 'm-10030', 'm-10031', 'm-10032', 'm-10033', 'm-10034', 'm-10035', 'm-10036', 'm-10037', 'm-10038', 'm-10039', 'm-10040', 'm-10041', 'm-10042', 'm-10043', 'm-10044', 'm-10045', 'm-10046', 'm-10047', 'm-10048', 'm-10049', 'm-10050', 'm-10051', 'm-10052', 'm-10053', 'm-10054', 'm-10055', 'm-10056', 'm-10057', 'm-10058', 'm-10059', 'm-10060', 'm-10061', 'm-10062', 'm-10063', 'm-10064', 'm-10065', 'm-10066', 'm-10067', 'm-10068', 'm-10069', 'm-10070', 'm-10071', 'm-10072', 'm-10073', 'm-10074', 'm-10075', 'm-10076', 'm-10077', 'm-10078', 'm-10079', 'm-10080', 'm-10081', 'm-10082', 'm-10083', 'm-10084', 'm-10085', 'm-10086', 'm-10087', 'm-10088', 'm-10089', 'm-10090', 'm-10091', 'm-10092', 'm-10093', 'm-10094', 'm-10095', 'm-10096', 'm-10097', 'm-10098', 'm-10099', 'm-10100', 'm-10201']
-2025-05-14 05:14:04 - [m-10201] Attempting to compute cluster key from full state...
-2025-05-14 05:14:04 - [m-10201] Computed new cluster key K_cluster (from full state): 300485277094077108487497374587... (took 0.439 ms)
-2025-05-14 05:14:04 - [m-10201] [MEMBER] Execution time for key computation (full state): 0.439 ms
+2025-05-17 07:38:23 - [m-10201] Starting Member Node: m-10201
+2025-05-17 07:38:23 - [m-10201] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 07:38:23 - [m-10201] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 07:38:23 - [m-10201] Loaded DH params...
+2025-05-17 07:38:23 - [m-10201] Loading CH public key: /mnt/workarea/H-SBP/keys/ch1_public.pem
+2025-05-17 07:38:23 - [m-10201] Starting node m-10201 as MEMBER in Cluster 1
+2025-05-17 07:38:23 - [m-10201] My CH is ch-1. Target CH Address: ('172.16.0.2', 5001)
+2025-05-17 07:38:23 - [m-10201] Listening for cluster broadcasts on UDP ('172.16.0.255', 6001)
+2025-05-17 07:38:23 - [m-10201] Successfully bound UDP listener to ('172.16.0.255', 6001)
+2025-05-17 07:38:23 - [m-10201] Attempt 1: Connecting to CH ch-1 at ('172.16.0.2', 5001)
+2025-05-17 07:38:23 - [m-10201] Connected to CH via TCP.
+2025-05-17 07:38:23 - [m-10201] Sending ID: ID:m-10201
+2025-05-17 07:38:23 - [m-10201] Sending T_i: T_I:46413589203867135574578874063921633012428346625763405303636330409421977267346
+2025-05-17 07:38:23 - [m-10201] ID and T_i sent.
+2025-05-17 07:38:23 - [m-10201] Listening on UDP ('172.16.0.255', 6001) for cluster messages...
+2025-05-17 07:38:23 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:38:23 - [m-10201] Detected minimal join update format.
+2025-05-17 07:38:23 - [m-10201] Computing cluster key as the JOINING member...
+2025-05-17 07:38:23 - [m-10201] Computed initial K_cluster as JOINER: 760415827554354836873778885093... (took 0.344 ms)
+2025-05-17 07:38:23 - [m-10201] [MEMBER] Execution time for joining key computation: 0.344 ms
+2025-05-17 07:38:25 - [m-10201] Received all 14 fragments for message 1747467505.307796. Reassembling...
+2025-05-17 07:38:25 - [m-10201] Reassembly successful for 1747467505.307796. Processing.
+2025-05-17 07:38:25 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:38:25 - [m-10201] Processing full state update format.
+2025-05-17 07:38:25 - [m-10201] Received Cluster State: Seq=['ch-1', 'm-10001', 'm-10002', 'm-10003', 'm-10004', 'm-10005', 'm-10006', 'm-10007', 'm-10008', 'm-10009', 'm-10010', 'm-10011', 'm-10012', 'm-10013', 'm-10014', 'm-10015', 'm-10016', 'm-10017', 'm-10018', 'm-10019', 'm-10020', 'm-10021', 'm-10022', 'm-10023', 'm-10024', 'm-10025', 'm-10026', 'm-10027', 'm-10028', 'm-10029', 'm-10030', 'm-10031', 'm-10032', 'm-10033', 'm-10034', 'm-10035', 'm-10036', 'm-10037', 'm-10038', 'm-10039', 'm-10040', 'm-10041', 'm-10042', 'm-10043', 'm-10044', 'm-10045', 'm-10046', 'm-10047', 'm-10048', 'm-10049', 'm-10050', 'm-10051', 'm-10052', 'm-10053', 'm-10054', 'm-10055', 'm-10056', 'm-10057', 'm-10058', 'm-10059', 'm-10060', 'm-10061', 'm-10062', 'm-10063', 'm-10064', 'm-10065', 'm-10066', 'm-10067', 'm-10068', 'm-10069', 'm-10070', 'm-10071', 'm-10072', 'm-10073', 'm-10074', 'm-10075', 'm-10076', 'm-10077', 'm-10078', 'm-10079', 'm-10080', 'm-10081', 'm-10082', 'm-10083', 'm-10084', 'm-10085', 'm-10086', 'm-10087', 'm-10088', 'm-10089', 'm-10090', 'm-10091', 'm-10092', 'm-10093', 'm-10094', 'm-10095', 'm-10096', 'm-10097', 'm-10098', 'm-10099', 'm-10100', 'm-10201']
+2025-05-17 07:38:25 - [m-10201] Attempting to compute cluster key from full state...
+2025-05-17 07:38:25 - [m-10201] Computed new cluster key K_cluster (from full state): 158487123007495887991451098736... (took 0.406 ms)
+2025-05-17 07:38:25 - [m-10201] [MEMBER] Execution time for key computation (full state): 0.406 ms
+2025-05-17 07:38:58 - [m-10201] Starting Member Node: m-10201
+2025-05-17 07:38:58 - [m-10201] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 07:38:58 - [m-10201] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 07:38:58 - [m-10201] Loaded DH params...
+2025-05-17 07:38:58 - [m-10201] Loading CH public key: /mnt/workarea/H-SBP/keys/ch1_public.pem
+2025-05-17 07:38:58 - [m-10201] Starting node m-10201 as MEMBER in Cluster 1
+2025-05-17 07:38:58 - [m-10201] My CH is ch-1. Target CH Address: ('172.16.0.2', 5001)
+2025-05-17 07:38:58 - [m-10201] Listening for cluster broadcasts on UDP ('172.16.0.255', 6001)
+2025-05-17 07:38:58 - [m-10201] Successfully bound UDP listener to ('172.16.0.255', 6001)
+2025-05-17 07:38:58 - [m-10201] Attempt 1: Connecting to CH ch-1 at ('172.16.0.2', 5001)
+2025-05-17 07:38:58 - [m-10201] Connected to CH via TCP.
+2025-05-17 07:38:58 - [m-10201] Sending ID: ID:m-10201
+2025-05-17 07:38:58 - [m-10201] Sending T_i: T_I:46413589203867135574578874063921633012428346625763405303636330409421977267346
+2025-05-17 07:38:58 - [m-10201] ID and T_i sent.
+2025-05-17 07:38:58 - [m-10201] Listening on UDP ('172.16.0.255', 6001) for cluster messages...
+2025-05-17 07:38:58 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:38:58 - [m-10201] Detected minimal join update format.
+2025-05-17 07:38:58 - [m-10201] Computing cluster key as the JOINING member...
+2025-05-17 07:38:58 - [m-10201] Computed initial K_cluster as JOINER: 760415827554354836873778885093... (took 0.342 ms)
+2025-05-17 07:38:58 - [m-10201] [MEMBER] Execution time for joining key computation: 0.342 ms
+2025-05-17 07:39:00 - [m-10201] Received all 14 fragments for message 1747467540.805574. Reassembling...
+2025-05-17 07:39:00 - [m-10201] Reassembly successful for 1747467540.805574. Processing.
+2025-05-17 07:39:00 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:39:00 - [m-10201] Processing full state update format.
+2025-05-17 07:39:00 - [m-10201] Received Cluster State: Seq=['ch-1', 'm-10001', 'm-10002', 'm-10003', 'm-10004', 'm-10005', 'm-10006', 'm-10007', 'm-10008', 'm-10009', 'm-10010', 'm-10011', 'm-10012', 'm-10013', 'm-10014', 'm-10015', 'm-10016', 'm-10017', 'm-10018', 'm-10019', 'm-10020', 'm-10021', 'm-10022', 'm-10023', 'm-10024', 'm-10025', 'm-10026', 'm-10027', 'm-10028', 'm-10029', 'm-10030', 'm-10031', 'm-10032', 'm-10033', 'm-10034', 'm-10035', 'm-10036', 'm-10037', 'm-10038', 'm-10039', 'm-10040', 'm-10041', 'm-10042', 'm-10043', 'm-10044', 'm-10045', 'm-10046', 'm-10047', 'm-10048', 'm-10049', 'm-10050', 'm-10051', 'm-10052', 'm-10053', 'm-10054', 'm-10055', 'm-10056', 'm-10057', 'm-10058', 'm-10059', 'm-10060', 'm-10061', 'm-10062', 'm-10063', 'm-10064', 'm-10065', 'm-10066', 'm-10067', 'm-10068', 'm-10069', 'm-10070', 'm-10071', 'm-10072', 'm-10073', 'm-10074', 'm-10075', 'm-10076', 'm-10077', 'm-10078', 'm-10079', 'm-10080', 'm-10081', 'm-10082', 'm-10083', 'm-10084', 'm-10085', 'm-10086', 'm-10087', 'm-10088', 'm-10089', 'm-10090', 'm-10091', 'm-10092', 'm-10093', 'm-10094', 'm-10095', 'm-10096', 'm-10097', 'm-10098', 'm-10099', 'm-10100', 'm-10201']
+2025-05-17 07:39:00 - [m-10201] Attempting to compute cluster key from full state...
+2025-05-17 07:39:00 - [m-10201] Computed new cluster key K_cluster (from full state): 158487123007495887991451098736... (took 0.357 ms)
+2025-05-17 07:39:00 - [m-10201] [MEMBER] Execution time for key computation (full state): 0.357 ms
+2025-05-17 07:39:34 - [m-10201] Starting Member Node: m-10201
+2025-05-17 07:39:34 - [m-10201] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 07:39:34 - [m-10201] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 07:39:34 - [m-10201] Loaded DH params...
+2025-05-17 07:39:34 - [m-10201] Loading CH public key: /mnt/workarea/H-SBP/keys/ch1_public.pem
+2025-05-17 07:39:34 - [m-10201] Starting node m-10201 as MEMBER in Cluster 1
+2025-05-17 07:39:34 - [m-10201] My CH is ch-1. Target CH Address: ('172.16.0.2', 5001)
+2025-05-17 07:39:34 - [m-10201] Listening for cluster broadcasts on UDP ('172.16.0.255', 6001)
+2025-05-17 07:39:34 - [m-10201] Successfully bound UDP listener to ('172.16.0.255', 6001)
+2025-05-17 07:39:34 - [m-10201] Attempt 1: Connecting to CH ch-1 at ('172.16.0.2', 5001)
+2025-05-17 07:39:34 - [m-10201] Connected to CH via TCP.
+2025-05-17 07:39:34 - [m-10201] Sending ID: ID:m-10201
+2025-05-17 07:39:34 - [m-10201] Sending T_i: T_I:46413589203867135574578874063921633012428346625763405303636330409421977267346
+2025-05-17 07:39:34 - [m-10201] ID and T_i sent.
+2025-05-17 07:39:34 - [m-10201] Listening on UDP ('172.16.0.255', 6001) for cluster messages...
+2025-05-17 07:39:34 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:39:34 - [m-10201] Detected minimal join update format.
+2025-05-17 07:39:34 - [m-10201] Computing cluster key as the JOINING member...
+2025-05-17 07:39:34 - [m-10201] Computed initial K_cluster as JOINER: 760415827554354836873778885093... (took 0.461 ms)
+2025-05-17 07:39:34 - [m-10201] [MEMBER] Execution time for joining key computation: 0.461 ms
+2025-05-17 07:39:36 - [m-10201] Received all 14 fragments for message 1747467576.210089. Reassembling...
+2025-05-17 07:39:36 - [m-10201] Reassembly successful for 1747467576.210089. Processing.
+2025-05-17 07:39:36 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:39:36 - [m-10201] Processing full state update format.
+2025-05-17 07:39:36 - [m-10201] Received Cluster State: Seq=['ch-1', 'm-10001', 'm-10002', 'm-10003', 'm-10004', 'm-10005', 'm-10006', 'm-10007', 'm-10008', 'm-10009', 'm-10010', 'm-10011', 'm-10012', 'm-10013', 'm-10014', 'm-10015', 'm-10016', 'm-10017', 'm-10018', 'm-10019', 'm-10020', 'm-10021', 'm-10022', 'm-10023', 'm-10024', 'm-10025', 'm-10026', 'm-10027', 'm-10028', 'm-10029', 'm-10030', 'm-10031', 'm-10032', 'm-10033', 'm-10034', 'm-10035', 'm-10036', 'm-10037', 'm-10038', 'm-10039', 'm-10040', 'm-10041', 'm-10042', 'm-10043', 'm-10044', 'm-10045', 'm-10046', 'm-10047', 'm-10048', 'm-10049', 'm-10050', 'm-10051', 'm-10052', 'm-10053', 'm-10054', 'm-10055', 'm-10056', 'm-10057', 'm-10058', 'm-10059', 'm-10060', 'm-10061', 'm-10062', 'm-10063', 'm-10064', 'm-10065', 'm-10066', 'm-10067', 'm-10068', 'm-10069', 'm-10070', 'm-10071', 'm-10072', 'm-10073', 'm-10074', 'm-10075', 'm-10076', 'm-10077', 'm-10078', 'm-10079', 'm-10080', 'm-10081', 'm-10082', 'm-10083', 'm-10084', 'm-10085', 'm-10086', 'm-10087', 'm-10088', 'm-10089', 'm-10090', 'm-10091', 'm-10092', 'm-10093', 'm-10094', 'm-10095', 'm-10096', 'm-10097', 'm-10098', 'm-10099', 'm-10100', 'm-10201']
+2025-05-17 07:39:36 - [m-10201] Attempting to compute cluster key from full state...
+2025-05-17 07:39:36 - [m-10201] Computed new cluster key K_cluster (from full state): 158487123007495887991451098736... (took 0.210 ms)
+2025-05-17 07:39:36 - [m-10201] [MEMBER] Execution time for key computation (full state): 0.210 ms
+2025-05-17 07:40:09 - [m-10201] Starting Member Node: m-10201
+2025-05-17 07:40:09 - [m-10201] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 07:40:09 - [m-10201] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 07:40:09 - [m-10201] Loaded DH params...
+2025-05-17 07:40:09 - [m-10201] Loading CH public key: /mnt/workarea/H-SBP/keys/ch1_public.pem
+2025-05-17 07:40:09 - [m-10201] Starting node m-10201 as MEMBER in Cluster 1
+2025-05-17 07:40:09 - [m-10201] My CH is ch-1. Target CH Address: ('172.16.0.2', 5001)
+2025-05-17 07:40:09 - [m-10201] Listening for cluster broadcasts on UDP ('172.16.0.255', 6001)
+2025-05-17 07:40:09 - [m-10201] Successfully bound UDP listener to ('172.16.0.255', 6001)
+2025-05-17 07:40:09 - [m-10201] Attempt 1: Connecting to CH ch-1 at ('172.16.0.2', 5001)
+2025-05-17 07:40:09 - [m-10201] Connected to CH via TCP.
+2025-05-17 07:40:09 - [m-10201] Sending ID: ID:m-10201
+2025-05-17 07:40:09 - [m-10201] Sending T_i: T_I:46413589203867135574578874063921633012428346625763405303636330409421977267346
+2025-05-17 07:40:09 - [m-10201] ID and T_i sent.
+2025-05-17 07:40:09 - [m-10201] Listening on UDP ('172.16.0.255', 6001) for cluster messages...
+2025-05-17 07:40:09 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:40:09 - [m-10201] Detected minimal join update format.
+2025-05-17 07:40:09 - [m-10201] Computing cluster key as the JOINING member...
+2025-05-17 07:40:09 - [m-10201] Computed initial K_cluster as JOINER: 760415827554354836873778885093... (took 0.243 ms)
+2025-05-17 07:40:09 - [m-10201] [MEMBER] Execution time for joining key computation: 0.243 ms
+2025-05-17 07:40:11 - [m-10201] Received all 14 fragments for message 1747467611.729223. Reassembling...
+2025-05-17 07:40:11 - [m-10201] Reassembly successful for 1747467611.729223. Processing.
+2025-05-17 07:40:11 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:40:11 - [m-10201] Processing full state update format.
+2025-05-17 07:40:11 - [m-10201] Received Cluster State: Seq=['ch-1', 'm-10001', 'm-10002', 'm-10003', 'm-10004', 'm-10005', 'm-10006', 'm-10007', 'm-10008', 'm-10009', 'm-10010', 'm-10011', 'm-10012', 'm-10013', 'm-10014', 'm-10015', 'm-10016', 'm-10017', 'm-10018', 'm-10019', 'm-10020', 'm-10021', 'm-10022', 'm-10023', 'm-10024', 'm-10025', 'm-10026', 'm-10027', 'm-10028', 'm-10029', 'm-10030', 'm-10031', 'm-10032', 'm-10033', 'm-10034', 'm-10035', 'm-10036', 'm-10037', 'm-10038', 'm-10039', 'm-10040', 'm-10041', 'm-10042', 'm-10043', 'm-10044', 'm-10045', 'm-10046', 'm-10047', 'm-10048', 'm-10049', 'm-10050', 'm-10051', 'm-10052', 'm-10053', 'm-10054', 'm-10055', 'm-10056', 'm-10057', 'm-10058', 'm-10059', 'm-10060', 'm-10061', 'm-10062', 'm-10063', 'm-10064', 'm-10065', 'm-10066', 'm-10067', 'm-10068', 'm-10069', 'm-10070', 'm-10071', 'm-10072', 'm-10073', 'm-10074', 'm-10075', 'm-10076', 'm-10077', 'm-10078', 'm-10079', 'm-10080', 'm-10081', 'm-10082', 'm-10083', 'm-10084', 'm-10085', 'm-10086', 'm-10087', 'm-10088', 'm-10089', 'm-10090', 'm-10091', 'm-10092', 'm-10093', 'm-10094', 'm-10095', 'm-10096', 'm-10097', 'm-10098', 'm-10099', 'm-10100', 'm-10201']
+2025-05-17 07:40:11 - [m-10201] Attempting to compute cluster key from full state...
+2025-05-17 07:40:11 - [m-10201] Computed new cluster key K_cluster (from full state): 158487123007495887991451098736... (took 0.438 ms)
+2025-05-17 07:40:11 - [m-10201] [MEMBER] Execution time for key computation (full state): 0.438 ms
+2025-05-17 07:40:45 - [m-10201] Starting Member Node: m-10201
+2025-05-17 07:40:45 - [m-10201] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 07:40:45 - [m-10201] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 07:40:45 - [m-10201] Loaded DH params...
+2025-05-17 07:40:45 - [m-10201] Loading CH public key: /mnt/workarea/H-SBP/keys/ch1_public.pem
+2025-05-17 07:40:45 - [m-10201] Starting node m-10201 as MEMBER in Cluster 1
+2025-05-17 07:40:45 - [m-10201] My CH is ch-1. Target CH Address: ('172.16.0.2', 5001)
+2025-05-17 07:40:45 - [m-10201] Listening for cluster broadcasts on UDP ('172.16.0.255', 6001)
+2025-05-17 07:40:45 - [m-10201] Successfully bound UDP listener to ('172.16.0.255', 6001)
+2025-05-17 07:40:45 - [m-10201] Attempt 1: Connecting to CH ch-1 at ('172.16.0.2', 5001)
+2025-05-17 07:40:45 - [m-10201] Connected to CH via TCP.
+2025-05-17 07:40:45 - [m-10201] Sending ID: ID:m-10201
+2025-05-17 07:40:45 - [m-10201] Sending T_i: T_I:46413589203867135574578874063921633012428346625763405303636330409421977267346
+2025-05-17 07:40:45 - [m-10201] ID and T_i sent.
+2025-05-17 07:40:45 - [m-10201] Listening on UDP ('172.16.0.255', 6001) for cluster messages...
+2025-05-17 07:40:45 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:40:45 - [m-10201] Detected minimal join update format.
+2025-05-17 07:40:45 - [m-10201] Computing cluster key as the JOINING member...
+2025-05-17 07:40:45 - [m-10201] Computed initial K_cluster as JOINER: 760415827554354836873778885093... (took 0.259 ms)
+2025-05-17 07:40:45 - [m-10201] [MEMBER] Execution time for joining key computation: 0.259 ms
+2025-05-17 07:40:47 - [m-10201] Received all 14 fragments for message 1747467647.291406. Reassembling...
+2025-05-17 07:40:47 - [m-10201] Reassembly successful for 1747467647.291406. Processing.
+2025-05-17 07:40:47 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:40:47 - [m-10201] Processing full state update format.
+2025-05-17 07:40:47 - [m-10201] Received Cluster State: Seq=['ch-1', 'm-10001', 'm-10002', 'm-10003', 'm-10004', 'm-10005', 'm-10006', 'm-10007', 'm-10008', 'm-10009', 'm-10010', 'm-10011', 'm-10012', 'm-10013', 'm-10014', 'm-10015', 'm-10016', 'm-10017', 'm-10018', 'm-10019', 'm-10020', 'm-10021', 'm-10022', 'm-10023', 'm-10024', 'm-10025', 'm-10026', 'm-10027', 'm-10028', 'm-10029', 'm-10030', 'm-10031', 'm-10032', 'm-10033', 'm-10034', 'm-10035', 'm-10036', 'm-10037', 'm-10038', 'm-10039', 'm-10040', 'm-10041', 'm-10042', 'm-10043', 'm-10044', 'm-10045', 'm-10046', 'm-10047', 'm-10048', 'm-10049', 'm-10050', 'm-10051', 'm-10052', 'm-10053', 'm-10054', 'm-10055', 'm-10056', 'm-10057', 'm-10058', 'm-10059', 'm-10060', 'm-10061', 'm-10062', 'm-10063', 'm-10064', 'm-10065', 'm-10066', 'm-10067', 'm-10068', 'm-10069', 'm-10070', 'm-10071', 'm-10072', 'm-10073', 'm-10074', 'm-10075', 'm-10076', 'm-10077', 'm-10078', 'm-10079', 'm-10080', 'm-10081', 'm-10082', 'm-10083', 'm-10084', 'm-10085', 'm-10086', 'm-10087', 'm-10088', 'm-10089', 'm-10090', 'm-10091', 'm-10092', 'm-10093', 'm-10094', 'm-10095', 'm-10096', 'm-10097', 'm-10098', 'm-10099', 'm-10100', 'm-10201']
+2025-05-17 07:40:47 - [m-10201] Attempting to compute cluster key from full state...
+2025-05-17 07:40:47 - [m-10201] Computed new cluster key K_cluster (from full state): 158487123007495887991451098736... (took 0.588 ms)
+2025-05-17 07:40:47 - [m-10201] [MEMBER] Execution time for key computation (full state): 0.588 ms
+2025-05-17 07:41:20 - [m-10201] Starting Member Node: m-10201
+2025-05-17 07:41:20 - [m-10201] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 07:41:20 - [m-10201] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 07:41:20 - [m-10201] Loaded DH params...
+2025-05-17 07:41:20 - [m-10201] Loading CH public key: /mnt/workarea/H-SBP/keys/ch1_public.pem
+2025-05-17 07:41:20 - [m-10201] Starting node m-10201 as MEMBER in Cluster 1
+2025-05-17 07:41:20 - [m-10201] My CH is ch-1. Target CH Address: ('172.16.0.2', 5001)
+2025-05-17 07:41:20 - [m-10201] Listening for cluster broadcasts on UDP ('172.16.0.255', 6001)
+2025-05-17 07:41:20 - [m-10201] Successfully bound UDP listener to ('172.16.0.255', 6001)
+2025-05-17 07:41:20 - [m-10201] Attempt 1: Connecting to CH ch-1 at ('172.16.0.2', 5001)
+2025-05-17 07:41:20 - [m-10201] Connected to CH via TCP.
+2025-05-17 07:41:20 - [m-10201] Sending ID: ID:m-10201
+2025-05-17 07:41:20 - [m-10201] Sending T_i: T_I:46413589203867135574578874063921633012428346625763405303636330409421977267346
+2025-05-17 07:41:20 - [m-10201] ID and T_i sent.
+2025-05-17 07:41:20 - [m-10201] Listening on UDP ('172.16.0.255', 6001) for cluster messages...
+2025-05-17 07:41:20 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:41:20 - [m-10201] Detected minimal join update format.
+2025-05-17 07:41:20 - [m-10201] Computing cluster key as the JOINING member...
+2025-05-17 07:41:20 - [m-10201] Computed initial K_cluster as JOINER: 760415827554354836873778885093... (took 0.272 ms)
+2025-05-17 07:41:20 - [m-10201] [MEMBER] Execution time for joining key computation: 0.272 ms
+2025-05-17 07:41:22 - [m-10201] Received all 14 fragments for message 1747467682.851910. Reassembling...
+2025-05-17 07:41:22 - [m-10201] Reassembly successful for 1747467682.851910. Processing.
+2025-05-17 07:41:22 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:41:22 - [m-10201] Processing full state update format.
+2025-05-17 07:41:22 - [m-10201] Received Cluster State: Seq=['ch-1', 'm-10001', 'm-10002', 'm-10003', 'm-10004', 'm-10005', 'm-10006', 'm-10007', 'm-10008', 'm-10009', 'm-10010', 'm-10011', 'm-10012', 'm-10013', 'm-10014', 'm-10015', 'm-10016', 'm-10017', 'm-10018', 'm-10019', 'm-10020', 'm-10021', 'm-10022', 'm-10023', 'm-10024', 'm-10025', 'm-10026', 'm-10027', 'm-10028', 'm-10029', 'm-10030', 'm-10031', 'm-10032', 'm-10033', 'm-10034', 'm-10035', 'm-10036', 'm-10037', 'm-10038', 'm-10039', 'm-10040', 'm-10041', 'm-10042', 'm-10043', 'm-10044', 'm-10045', 'm-10046', 'm-10047', 'm-10048', 'm-10049', 'm-10050', 'm-10051', 'm-10052', 'm-10053', 'm-10054', 'm-10055', 'm-10056', 'm-10057', 'm-10058', 'm-10059', 'm-10060', 'm-10061', 'm-10062', 'm-10063', 'm-10064', 'm-10065', 'm-10066', 'm-10067', 'm-10068', 'm-10069', 'm-10070', 'm-10071', 'm-10072', 'm-10073', 'm-10074', 'm-10075', 'm-10076', 'm-10077', 'm-10078', 'm-10079', 'm-10080', 'm-10081', 'm-10082', 'm-10083', 'm-10084', 'm-10085', 'm-10086', 'm-10087', 'm-10088', 'm-10089', 'm-10090', 'm-10091', 'm-10092', 'm-10093', 'm-10094', 'm-10095', 'm-10096', 'm-10097', 'm-10098', 'm-10099', 'm-10100', 'm-10201']
+2025-05-17 07:41:22 - [m-10201] Attempting to compute cluster key from full state...
+2025-05-17 07:41:22 - [m-10201] Computed new cluster key K_cluster (from full state): 158487123007495887991451098736... (took 0.407 ms)
+2025-05-17 07:41:22 - [m-10201] [MEMBER] Execution time for key computation (full state): 0.407 ms
+2025-05-17 07:41:56 - [m-10201] Starting Member Node: m-10201
+2025-05-17 07:41:56 - [m-10201] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 07:41:56 - [m-10201] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 07:41:56 - [m-10201] Loaded DH params...
+2025-05-17 07:41:56 - [m-10201] Loading CH public key: /mnt/workarea/H-SBP/keys/ch1_public.pem
+2025-05-17 07:41:56 - [m-10201] Starting node m-10201 as MEMBER in Cluster 1
+2025-05-17 07:41:56 - [m-10201] My CH is ch-1. Target CH Address: ('172.16.0.2', 5001)
+2025-05-17 07:41:56 - [m-10201] Listening for cluster broadcasts on UDP ('172.16.0.255', 6001)
+2025-05-17 07:41:56 - [m-10201] Successfully bound UDP listener to ('172.16.0.255', 6001)
+2025-05-17 07:41:56 - [m-10201] Attempt 1: Connecting to CH ch-1 at ('172.16.0.2', 5001)
+2025-05-17 07:41:56 - [m-10201] Connected to CH via TCP.
+2025-05-17 07:41:56 - [m-10201] Sending ID: ID:m-10201
+2025-05-17 07:41:56 - [m-10201] Sending T_i: T_I:46413589203867135574578874063921633012428346625763405303636330409421977267346
+2025-05-17 07:41:56 - [m-10201] ID and T_i sent.
+2025-05-17 07:41:56 - [m-10201] Listening on UDP ('172.16.0.255', 6001) for cluster messages...
+2025-05-17 07:41:56 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:41:56 - [m-10201] Detected minimal join update format.
+2025-05-17 07:41:56 - [m-10201] Computing cluster key as the JOINING member...
+2025-05-17 07:41:56 - [m-10201] Computed initial K_cluster as JOINER: 760415827554354836873778885093... (took 0.296 ms)
+2025-05-17 07:41:56 - [m-10201] [MEMBER] Execution time for joining key computation: 0.296 ms
+2025-05-17 07:41:58 - [m-10201] Received all 14 fragments for message 1747467718.385019. Reassembling...
+2025-05-17 07:41:58 - [m-10201] Reassembly successful for 1747467718.385019. Processing.
+2025-05-17 07:41:58 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:41:58 - [m-10201] Processing full state update format.
+2025-05-17 07:41:58 - [m-10201] Received Cluster State: Seq=['ch-1', 'm-10001', 'm-10002', 'm-10003', 'm-10004', 'm-10005', 'm-10006', 'm-10007', 'm-10008', 'm-10009', 'm-10010', 'm-10011', 'm-10012', 'm-10013', 'm-10014', 'm-10015', 'm-10016', 'm-10017', 'm-10018', 'm-10019', 'm-10020', 'm-10021', 'm-10022', 'm-10023', 'm-10024', 'm-10025', 'm-10026', 'm-10027', 'm-10028', 'm-10029', 'm-10030', 'm-10031', 'm-10032', 'm-10033', 'm-10034', 'm-10035', 'm-10036', 'm-10037', 'm-10038', 'm-10039', 'm-10040', 'm-10041', 'm-10042', 'm-10043', 'm-10044', 'm-10045', 'm-10046', 'm-10047', 'm-10048', 'm-10049', 'm-10050', 'm-10051', 'm-10052', 'm-10053', 'm-10054', 'm-10055', 'm-10056', 'm-10057', 'm-10058', 'm-10059', 'm-10060', 'm-10061', 'm-10062', 'm-10063', 'm-10064', 'm-10065', 'm-10066', 'm-10067', 'm-10068', 'm-10069', 'm-10070', 'm-10071', 'm-10072', 'm-10073', 'm-10074', 'm-10075', 'm-10076', 'm-10077', 'm-10078', 'm-10079', 'm-10080', 'm-10081', 'm-10082', 'm-10083', 'm-10084', 'm-10085', 'm-10086', 'm-10087', 'm-10088', 'm-10089', 'm-10090', 'm-10091', 'm-10092', 'm-10093', 'm-10094', 'm-10095', 'm-10096', 'm-10097', 'm-10098', 'm-10099', 'm-10100', 'm-10201']
+2025-05-17 07:41:58 - [m-10201] Attempting to compute cluster key from full state...
+2025-05-17 07:41:58 - [m-10201] Computed new cluster key K_cluster (from full state): 158487123007495887991451098736... (took 0.200 ms)
+2025-05-17 07:41:58 - [m-10201] [MEMBER] Execution time for key computation (full state): 0.200 ms
+2025-05-17 07:42:31 - [m-10201] Starting Member Node: m-10201
+2025-05-17 07:42:31 - [m-10201] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 07:42:31 - [m-10201] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 07:42:31 - [m-10201] Loaded DH params...
+2025-05-17 07:42:31 - [m-10201] Loading CH public key: /mnt/workarea/H-SBP/keys/ch1_public.pem
+2025-05-17 07:42:31 - [m-10201] Starting node m-10201 as MEMBER in Cluster 1
+2025-05-17 07:42:31 - [m-10201] My CH is ch-1. Target CH Address: ('172.16.0.2', 5001)
+2025-05-17 07:42:31 - [m-10201] Listening for cluster broadcasts on UDP ('172.16.0.255', 6001)
+2025-05-17 07:42:31 - [m-10201] Successfully bound UDP listener to ('172.16.0.255', 6001)
+2025-05-17 07:42:31 - [m-10201] Attempt 1: Connecting to CH ch-1 at ('172.16.0.2', 5001)
+2025-05-17 07:42:31 - [m-10201] Connected to CH via TCP.
+2025-05-17 07:42:31 - [m-10201] Sending ID: ID:m-10201
+2025-05-17 07:42:31 - [m-10201] Sending T_i: T_I:46413589203867135574578874063921633012428346625763405303636330409421977267346
+2025-05-17 07:42:31 - [m-10201] ID and T_i sent.
+2025-05-17 07:42:31 - [m-10201] Listening on UDP ('172.16.0.255', 6001) for cluster messages...
+2025-05-17 07:42:31 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:42:31 - [m-10201] Detected minimal join update format.
+2025-05-17 07:42:31 - [m-10201] Computing cluster key as the JOINING member...
+2025-05-17 07:42:31 - [m-10201] Computed initial K_cluster as JOINER: 760415827554354836873778885093... (took 0.496 ms)
+2025-05-17 07:42:31 - [m-10201] [MEMBER] Execution time for joining key computation: 0.496 ms
+2025-05-17 07:42:33 - [m-10201] Received all 14 fragments for message 1747467753.894824. Reassembling...
+2025-05-17 07:42:33 - [m-10201] Reassembly successful for 1747467753.894824. Processing.
+2025-05-17 07:42:33 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:42:33 - [m-10201] Processing full state update format.
+2025-05-17 07:42:33 - [m-10201] Received Cluster State: Seq=['ch-1', 'm-10001', 'm-10002', 'm-10003', 'm-10004', 'm-10005', 'm-10006', 'm-10007', 'm-10008', 'm-10009', 'm-10010', 'm-10011', 'm-10012', 'm-10013', 'm-10014', 'm-10015', 'm-10016', 'm-10017', 'm-10018', 'm-10019', 'm-10020', 'm-10021', 'm-10022', 'm-10023', 'm-10024', 'm-10025', 'm-10026', 'm-10027', 'm-10028', 'm-10029', 'm-10030', 'm-10031', 'm-10032', 'm-10033', 'm-10034', 'm-10035', 'm-10036', 'm-10037', 'm-10038', 'm-10039', 'm-10040', 'm-10041', 'm-10042', 'm-10043', 'm-10044', 'm-10045', 'm-10046', 'm-10047', 'm-10048', 'm-10049', 'm-10050', 'm-10051', 'm-10052', 'm-10053', 'm-10054', 'm-10055', 'm-10056', 'm-10057', 'm-10058', 'm-10059', 'm-10060', 'm-10061', 'm-10062', 'm-10063', 'm-10064', 'm-10065', 'm-10066', 'm-10067', 'm-10068', 'm-10069', 'm-10070', 'm-10071', 'm-10072', 'm-10073', 'm-10074', 'm-10075', 'm-10076', 'm-10077', 'm-10078', 'm-10079', 'm-10080', 'm-10081', 'm-10082', 'm-10083', 'm-10084', 'm-10085', 'm-10086', 'm-10087', 'm-10088', 'm-10089', 'm-10090', 'm-10091', 'm-10092', 'm-10093', 'm-10094', 'm-10095', 'm-10096', 'm-10097', 'm-10098', 'm-10099', 'm-10100', 'm-10201']
+2025-05-17 07:42:33 - [m-10201] Attempting to compute cluster key from full state...
+2025-05-17 07:42:33 - [m-10201] Computed new cluster key K_cluster (from full state): 158487123007495887991451098736... (took 0.410 ms)
+2025-05-17 07:42:33 - [m-10201] [MEMBER] Execution time for key computation (full state): 0.410 ms
+2025-05-17 07:43:07 - [m-10201] Starting Member Node: m-10201
+2025-05-17 07:43:07 - [m-10201] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 07:43:07 - [m-10201] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 07:43:07 - [m-10201] Loaded DH params...
+2025-05-17 07:43:07 - [m-10201] Loading CH public key: /mnt/workarea/H-SBP/keys/ch1_public.pem
+2025-05-17 07:43:07 - [m-10201] Starting node m-10201 as MEMBER in Cluster 1
+2025-05-17 07:43:07 - [m-10201] My CH is ch-1. Target CH Address: ('172.16.0.2', 5001)
+2025-05-17 07:43:07 - [m-10201] Listening for cluster broadcasts on UDP ('172.16.0.255', 6001)
+2025-05-17 07:43:07 - [m-10201] Successfully bound UDP listener to ('172.16.0.255', 6001)
+2025-05-17 07:43:07 - [m-10201] Attempt 1: Connecting to CH ch-1 at ('172.16.0.2', 5001)
+2025-05-17 07:43:07 - [m-10201] Connected to CH via TCP.
+2025-05-17 07:43:07 - [m-10201] Sending ID: ID:m-10201
+2025-05-17 07:43:07 - [m-10201] Sending T_i: T_I:46413589203867135574578874063921633012428346625763405303636330409421977267346
+2025-05-17 07:43:07 - [m-10201] ID and T_i sent.
+2025-05-17 07:43:07 - [m-10201] Listening on UDP ('172.16.0.255', 6001) for cluster messages...
+2025-05-17 07:43:07 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:43:07 - [m-10201] Detected minimal join update format.
+2025-05-17 07:43:07 - [m-10201] Computing cluster key as the JOINING member...
+2025-05-17 07:43:07 - [m-10201] Computed initial K_cluster as JOINER: 760415827554354836873778885093... (took 0.371 ms)
+2025-05-17 07:43:07 - [m-10201] [MEMBER] Execution time for joining key computation: 0.371 ms
+2025-05-17 07:43:09 - [m-10201] Received all 14 fragments for message 1747467789.416204. Reassembling...
+2025-05-17 07:43:09 - [m-10201] Reassembly successful for 1747467789.416204. Processing.
+2025-05-17 07:43:09 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:43:09 - [m-10201] Processing full state update format.
+2025-05-17 07:43:09 - [m-10201] Received Cluster State: Seq=['ch-1', 'm-10001', 'm-10002', 'm-10003', 'm-10004', 'm-10005', 'm-10006', 'm-10007', 'm-10008', 'm-10009', 'm-10010', 'm-10011', 'm-10012', 'm-10013', 'm-10014', 'm-10015', 'm-10016', 'm-10017', 'm-10018', 'm-10019', 'm-10020', 'm-10021', 'm-10022', 'm-10023', 'm-10024', 'm-10025', 'm-10026', 'm-10027', 'm-10028', 'm-10029', 'm-10030', 'm-10031', 'm-10032', 'm-10033', 'm-10034', 'm-10035', 'm-10036', 'm-10037', 'm-10038', 'm-10039', 'm-10040', 'm-10041', 'm-10042', 'm-10043', 'm-10044', 'm-10045', 'm-10046', 'm-10047', 'm-10048', 'm-10049', 'm-10050', 'm-10051', 'm-10052', 'm-10053', 'm-10054', 'm-10055', 'm-10056', 'm-10057', 'm-10058', 'm-10059', 'm-10060', 'm-10061', 'm-10062', 'm-10063', 'm-10064', 'm-10065', 'm-10066', 'm-10067', 'm-10068', 'm-10069', 'm-10070', 'm-10071', 'm-10072', 'm-10073', 'm-10074', 'm-10075', 'm-10076', 'm-10077', 'm-10078', 'm-10079', 'm-10080', 'm-10081', 'm-10082', 'm-10083', 'm-10084', 'm-10085', 'm-10086', 'm-10087', 'm-10088', 'm-10089', 'm-10090', 'm-10091', 'm-10092', 'm-10093', 'm-10094', 'm-10095', 'm-10096', 'm-10097', 'm-10098', 'm-10099', 'm-10100', 'm-10201']
+2025-05-17 07:43:09 - [m-10201] Attempting to compute cluster key from full state...
+2025-05-17 07:43:09 - [m-10201] Computed new cluster key K_cluster (from full state): 158487123007495887991451098736... (took 0.313 ms)
+2025-05-17 07:43:09 - [m-10201] [MEMBER] Execution time for key computation (full state): 0.313 ms
+2025-05-17 07:43:43 - [m-10201] Starting Member Node: m-10201
+2025-05-17 07:43:43 - [m-10201] Loading config: /mnt/workarea/H-SBP/config/hsbp_config.json
+2025-05-17 07:43:43 - [m-10201] Loading secrets: /mnt/workarea/H-SBP/config/hsbp_secrets.json
+2025-05-17 07:43:43 - [m-10201] Loaded DH params...
+2025-05-17 07:43:43 - [m-10201] Loading CH public key: /mnt/workarea/H-SBP/keys/ch1_public.pem
+2025-05-17 07:43:43 - [m-10201] Starting node m-10201 as MEMBER in Cluster 1
+2025-05-17 07:43:43 - [m-10201] My CH is ch-1. Target CH Address: ('172.16.0.2', 5001)
+2025-05-17 07:43:43 - [m-10201] Listening for cluster broadcasts on UDP ('172.16.0.255', 6001)
+2025-05-17 07:43:43 - [m-10201] Successfully bound UDP listener to ('172.16.0.255', 6001)
+2025-05-17 07:43:43 - [m-10201] Attempt 1: Connecting to CH ch-1 at ('172.16.0.2', 5001)
+2025-05-17 07:43:43 - [m-10201] Connected to CH via TCP.
+2025-05-17 07:43:43 - [m-10201] Sending ID: ID:m-10201
+2025-05-17 07:43:43 - [m-10201] Sending T_i: T_I:46413589203867135574578874063921633012428346625763405303636330409421977267346
+2025-05-17 07:43:43 - [m-10201] ID and T_i sent.
+2025-05-17 07:43:43 - [m-10201] Listening on UDP ('172.16.0.255', 6001) for cluster messages...
+2025-05-17 07:43:43 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:43:43 - [m-10201] Detected minimal join update format.
+2025-05-17 07:43:43 - [m-10201] Computing cluster key as the JOINING member...
+2025-05-17 07:43:43 - [m-10201] Computed initial K_cluster as JOINER: 760415827554354836873778885093... (took 0.217 ms)
+2025-05-17 07:43:43 - [m-10201] [MEMBER] Execution time for joining key computation: 0.217 ms
+2025-05-17 07:43:45 - [m-10201] Received all 14 fragments for message 1747467825.070125. Reassembling...
+2025-05-17 07:43:45 - [m-10201] Reassembly successful for 1747467825.070125. Processing.
+2025-05-17 07:43:45 - [m-10201] Processing KEY_UPDATE from CH...
+2025-05-17 07:43:45 - [m-10201] Processing full state update format.
+2025-05-17 07:43:45 - [m-10201] Received Cluster State: Seq=['ch-1', 'm-10001', 'm-10002', 'm-10003', 'm-10004', 'm-10005', 'm-10006', 'm-10007', 'm-10008', 'm-10009', 'm-10010', 'm-10011', 'm-10012', 'm-10013', 'm-10014', 'm-10015', 'm-10016', 'm-10017', 'm-10018', 'm-10019', 'm-10020', 'm-10021', 'm-10022', 'm-10023', 'm-10024', 'm-10025', 'm-10026', 'm-10027', 'm-10028', 'm-10029', 'm-10030', 'm-10031', 'm-10032', 'm-10033', 'm-10034', 'm-10035', 'm-10036', 'm-10037', 'm-10038', 'm-10039', 'm-10040', 'm-10041', 'm-10042', 'm-10043', 'm-10044', 'm-10045', 'm-10046', 'm-10047', 'm-10048', 'm-10049', 'm-10050', 'm-10051', 'm-10052', 'm-10053', 'm-10054', 'm-10055', 'm-10056', 'm-10057', 'm-10058', 'm-10059', 'm-10060', 'm-10061', 'm-10062', 'm-10063', 'm-10064', 'm-10065', 'm-10066', 'm-10067', 'm-10068', 'm-10069', 'm-10070', 'm-10071', 'm-10072', 'm-10073', 'm-10074', 'm-10075', 'm-10076', 'm-10077', 'm-10078', 'm-10079', 'm-10080', 'm-10081', 'm-10082', 'm-10083', 'm-10084', 'm-10085', 'm-10086', 'm-10087', 'm-10088', 'm-10089', 'm-10090', 'm-10091', 'm-10092', 'm-10093', 'm-10094', 'm-10095', 'm-10096', 'm-10097', 'm-10098', 'm-10099', 'm-10100', 'm-10201']
+2025-05-17 07:43:45 - [m-10201] Attempting to compute cluster key from full state...
+2025-05-17 07:43:45 - [m-10201] Computed new cluster key K_cluster (from full state): 158487123007495887991451098736... (took 0.272 ms)
+2025-05-17 07:43:45 - [m-10201] [MEMBER] Execution time for key computation (full state): 0.272 ms
